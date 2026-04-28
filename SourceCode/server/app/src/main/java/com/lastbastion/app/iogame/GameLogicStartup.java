@@ -6,6 +6,9 @@ import com.iohao.game.bolt.broker.client.AbstractBrokerClientStartup;
 import com.iohao.game.bolt.broker.core.client.BrokerClient;
 import com.iohao.game.bolt.broker.core.client.BrokerClientBuilder;
 import com.iohao.game.bolt.broker.core.client.BrokerClientType;
+import com.lastbastion.app.iogame.action.ArenaCmdAction;
+import com.lastbastion.app.iogame.action.BattlePassCmdAction;
+import com.lastbastion.app.iogame.action.OnboardingCmdAction;
 import com.lastbastion.app.iogame.action.SurvivorCmdAction;
 import com.lastbastion.app.iogame.action.UserCmdAction;
 import com.lastbastion.app.iogame.action.ZoneCmdAction;
@@ -22,9 +25,17 @@ public final class GameLogicStartup extends AbstractBrokerClientStartup {
     @Override
     public BarSkeleton createBarSkeleton() {
         BarSkeletonBuilder b = BarSkeleton.newBuilder();
+        // 关闭源文件 JavaDoc 解析：
+        //   1) Surefire 运行时 classpath 上不含 src/main/java，qdox 找不到源文件会抛 NPE；
+        //   2) 生产镜像打包同理不携带 .java；Doc 生成对运行时路由不必需。
+        b.getSetting().setParseDoc(false);
+        b.getSetting().setGenerateDoc(false);
         b.addActionController(UserCmdAction.class);
         b.addActionController(SurvivorCmdAction.class);
         b.addActionController(ZoneCmdAction.class);
+        b.addActionController(ArenaCmdAction.class);
+        b.addActionController(BattlePassCmdAction.class);
+        b.addActionController(OnboardingCmdAction.class);
         return b.build();
     }
 

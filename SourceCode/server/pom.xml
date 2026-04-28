@@ -27,6 +27,9 @@
         <slf4j.version>2.0.13</slf4j.version>
         <iogame.version>21.26</iogame.version>
         <java-websocket.version>1.5.6</java-websocket.version>
+        <jedis.version>5.1.2</jedis.version>
+        <hikari.version>5.1.0</hikari.version>
+        <mysql.version>8.4.0</mysql.version>
     </properties>
 
     <dependencyManagement>
@@ -68,6 +71,22 @@
                 <groupId>org.java-websocket</groupId>
                 <artifactId>Java-WebSocket</artifactId>
                 <version>${java-websocket.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${hikari.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql.version}</version>
             </dependency>
 
             <dependency>

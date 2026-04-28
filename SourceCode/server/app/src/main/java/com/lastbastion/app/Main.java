@@ -4,7 +4,9 @@ import com.lastbastion.app.iogame.IoGameNettyRuntime;
 import com.lastbastion.app.net.SessionRegistry;
 import com.lastbastion.game.player.FilePlayerStore;
 import com.lastbastion.game.player.InMemoryPlayerStore;
+import com.lastbastion.game.player.JdbcPlayerStore;
 import com.lastbastion.game.player.PlayerStore;
+import com.lastbastion.game.player.RedisPlayerStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -68,8 +70,26 @@ public final class Main {
                 Path root = Paths.get(System.getProperty("store.root", "./data/players"));
                 yield new FilePlayerStore(root);
             }
-            // "redis" / "mysql" 实现预留：只需新增 Jedis / JDBC 客户端即可替换。
+            case "redis" -> {
+                String uri = prop("store.redis.uri", "REDIS_URI", "redis://127.0.0.1:6379/0");
+                yield new RedisPlayerStore(uri);
+            }
+            case "mysql", "jdbc" -> {
+                String url = prop("store.jdbc.url", "MYSQL_URL",
+                        "jdbc:mysql://127.0.0.1:3306/lastbastion?useSSL=false&serverTimezone=UTC");
+                String user = prop("store.jdbc.user", "MYSQL_USER", "root");
+                String pwd = prop("store.jdbc.password", "MYSQL_PASSWORD", "");
+                yield new JdbcPlayerStore(url, user, pwd);
+            }
             default -> throw new IllegalArgumentException("Unknown store.kind=" + kind);
         };
+    }
+
+    private static String prop(String sysKey, String envKey, String def) {
+        String v = System.getProperty(sysKey);
+        if (v != null && !v.isBlank()) return v;
+        v = System.getenv(envKey);
+        if (v != null && !v.isBlank()) return v;
+        return def;
     }
 }
