@@ -52,15 +52,33 @@ mvn clean install           # 编译 + 单测
 mvn -pl combat-engine test  # 单模块测试
 ```
 
-目前包含 36 个单元测试，覆盖：5v5 战斗主循环、BOSS Rage、CC 免疫、DOT、盾吸收、Gacha 概率/80 抽保底、强化成功率（15 级 60%±3%）、Zone 线性解锁与离线 cap、Arena 换位积分、Battle Pass 升级与付费门槛、引导步骤顺序与条件跳过、货币上限/批量扣款原子性等。
+目前包含 40 个单元/集成测试，覆盖：5v5 战斗主循环、BOSS Rage、CC 免疫、DOT、盾吸收、Gacha 概率/80 抽保底、强化成功率（15 级 60%±3%）、Zone 线性解锁与离线 cap、Arena 换位积分、Battle Pass 升级与付费门槛、引导步骤顺序与条件跳过、货币上限/批量扣款原子性、20 个 Survivor 技能注册完备性，以及启动真实 WebSocket 服务端 → 连接 → 登录 → 推图 → 抽卡 → 未登录拒绝 → 未知 Action 拒绝的端到端 E2E 路径。
 
 ## 服务端启动（本地）
 
 ```bash
-mvn -pl app -am exec:java -Dexec.mainClass=com.lastbastion.app.Main
+mvn -pl app -am exec:java -Dexec.mainClass=com.lastbastion.app.Main \
+    -Dexec.cleanupDaemonThreads=false
+# 或者指定端口：
+# mvn -pl app -am exec:java -Dexec.mainClass=com.lastbastion.app.Main -Dport=10200
 ```
 
-`Main` 启动后会装配所有 Service + 打印可用的 ActionRegistry 路由表。真实 ioGame 网络运行时由 `IoGameRuntime` 占位，按 [ioGame 官方文档](https://iohao.github.io/game) 补 `NettyRunOne` 启动即可。
+启动后会：
+1. 加载 20 Survivor / 3 Zone / 50 级 Battle Pass 配置；
+2. 在 `ws://0.0.0.0:10100/` 启动 JSON-over-WebSocket 网关（`GameWebSocketServer`）；
+3. 注册 13 个 Action handler（见 `IoGameRuntime#registerActions`）。
+
+帧协议：
+```json
+// 请求
+{"id":1,"action":"survivor.pullGacha","payload":{"pool":"FREE","count":1}}
+// 响应
+{"id":1,"ok":true,"data":{"results":[{"configId":"R_GRUNT","rarity":"RARE","duplicate":false,"shardsAdded":0}]}}
+// 错误
+{"id":1,"ok":false,"code":"INSUFFICIENT_CURRENCY","error":"RECRUIT_TOKENS need 1 have 0"}
+```
+
+替换到 ioGame 原生 Netty（生产）：把 `IoGameRuntime` 中的 `GameWebSocketServer` 换成 `com.iohao.game:run-one-netty` 的 `NettyRunOne` 并把 `ActionHandler` 改写成 `ActionController` 即可。帧 schema、Action 集合、Session 模型保持不变。
 
 ## 客户端启动
 
@@ -85,6 +103,6 @@ npx tsc --noEmit
 
 ## 已知限制（留给后续扩代）
 
-- `IoGameRuntime` 只是占位；生产需接入 `com.iohao.game:run-one-netty` 的 `NettyRunOne` 并注册 Action 类。
-- 20 位 Survivor 的主动/被动技能 id 当前在 combat-engine 中以 "Precision Strike" 默认技能实现；需要策划 & 程序一起补真实技能表。
+- `IoGameRuntime` 目前用 Java-WebSocket + JSON 帧替代 ioGame 的 Netty 二进制协议，方便开发与 E2E 测试；切换生产协议仅需替换传输层，业务层接口（`ActionHandler`/`Session`）不变。
+- 20 位 Survivor 的主/被动技能已在 `AbilityLibrary` 内置一版可玩数值；后续若有数值策划调整，只需修改该表。
 - `TestIapVerifier` 总是通过；正式环境需替换为 Apple / Google 校验器并配合 `serverVerifyReceipt` 接口。

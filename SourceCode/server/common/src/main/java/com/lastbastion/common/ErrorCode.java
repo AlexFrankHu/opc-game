@@ -20,7 +20,11 @@ public enum ErrorCode {
     PASS_ALREADY_CLAIMED(1702, "battle pass level already claimed"),
     STARTER_PACK_USED(1703, "starter pack already purchased"),
     OFFER_EXPIRED(1704, "limited offer expired"),
-    GUIDE_STEP_ORDER(1801, "onboarding step out of order");
+    GUIDE_STEP_ORDER(1801, "onboarding step out of order"),
+    INTERNAL(9000, "internal server error"),
+    UNKNOWN_ACTION(9001, "unknown action"),
+    NOT_LOGGED_IN(9002, "not logged in"),
+    BAD_FRAME(9003, "malformed frame");
 
     private final int code;
     private final String description;

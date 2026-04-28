@@ -65,7 +65,12 @@ public final class CombatAssembler {
 
         boolean ccImmune = cfg != null && cfg.cls == SurvivorClass.WARRIOR;
         List<Ability> abilities = new ArrayList<>();
-        abilities.add(defaultAbility(cfg == null ? "generic" : cfg.id));
+        List<Ability> configured = cfg == null ? null : AbilityLibrary.abilitiesFor(cfg.id);
+        if (configured != null && !configured.isEmpty()) {
+            abilities.addAll(configured);
+        } else {
+            abilities.add(defaultAbility(cfg == null ? "generic" : cfg.id));
+        }
         return new CombatUnit(
                 "S" + inst.instanceId(),
                 cfg == null ? "Unknown" : cfg.name,

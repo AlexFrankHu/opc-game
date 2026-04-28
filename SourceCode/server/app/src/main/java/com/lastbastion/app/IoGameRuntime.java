@@ -1,34 +1,65 @@
 package com.lastbastion.app;
 
+import com.lastbastion.app.actions.ArenaActions;
+import com.lastbastion.app.actions.BattlePassActions;
+import com.lastbastion.app.actions.OnboardingActions;
+import com.lastbastion.app.actions.SurvivorActions;
+import com.lastbastion.app.actions.UserActions;
+import com.lastbastion.app.actions.ZoneActions;
+import com.lastbastion.app.net.ActionDispatcher;
+import com.lastbastion.app.net.GameWebSocketServer;
+import com.lastbastion.app.net.SessionRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * ioGame 框架集成占位。
- *
- * 在真实项目中，这里会：
- *   1) 构造 {@code BrokerBootstrap} / {@code ExternalServer};
- *   2) 注册 {@code ActionController} 集合；
- *   3) 使用 {@code NettyRunOne} 单进程模式或分布式模式启动。
- *
- * 未将 ioGame 启动代码直接写进来，是因为版本/网络约束在 CI 中可能无法下载对应依赖；
- * 生产部署按 <a href="https://iohao.github.io/game">iogame 文档</a>补全即可。
+ * 对外网关。默认实现使用 Java-WebSocket + JSON 帧；生产环境可替换为
+ * ioGame 的 {@code NettyRunOne}（见 <a href="https://iohao.github.io/game">ioGame 文档</a>）。
  */
 public final class IoGameRuntime {
 
     private static final Logger log = LoggerFactory.getLogger(IoGameRuntime.class);
 
     private final GameBootstrap.Services services;
+    private final SessionRegistry sessionRegistry = new SessionRegistry();
+    private final ActionDispatcher dispatcher = new ActionDispatcher();
+    private GameWebSocketServer wsServer;
 
     public IoGameRuntime(GameBootstrap.Services services) {
         this.services = services;
+        registerActions();
+    }
+
+    public ActionDispatcher dispatcher() { return dispatcher; }
+    public SessionRegistry sessions() { return sessionRegistry; }
+
+    private void registerActions() {
+        dispatcher.register(UserActions.login(sessionRegistry, services));
+        dispatcher.register(UserActions.heartbeat());
+        dispatcher.register(SurvivorActions.pullGacha(services));
+        dispatcher.register(SurvivorActions.levelUp(services));
+        dispatcher.register(ZoneActions.clear(services));
+        dispatcher.register(ZoneActions.settleIdle(services));
+        dispatcher.register(ArenaActions.match(services));
+        dispatcher.register(ArenaActions.challenge(services));
+        dispatcher.register(ArenaActions.leaderboard(services));
+        dispatcher.register(BattlePassActions.claim(services));
+        dispatcher.register(BattlePassActions.buy(services));
+        dispatcher.register(OnboardingActions.completeStep(services));
+        dispatcher.register(OnboardingActions.skip(services));
     }
 
     public void start(int port) {
-        log.info("[ioGame] (stub) start on port {} with {} action modules",
-                port, ActionRegistry.ALL.size());
-        log.info("[ioGame] available commands: {}",
-                ActionRegistry.ALL.keySet());
-        // Production: new com.iohao.game.external.NettyRunOne().startup(port, this::registerActions);
+        wsServer = new GameWebSocketServer(port, dispatcher);
+        wsServer.start();
+        log.info("IoGameRuntime started on :{} with {} actions", port, dispatcher.size());
+    }
+
+    public void stop() throws InterruptedException {
+        if (wsServer != null) wsServer.stop(1000);
+    }
+
+    public int port() {
+        return wsServer == null ? -1 : wsServer.getAddress().getPort();
     }
 }

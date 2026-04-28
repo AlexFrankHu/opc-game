@@ -24,7 +24,12 @@ public final class Main {
         log.info("Boot complete: survivors={}, zones={}",
                 svc.survivorRepo.size(),
                 svc.zoneRepo.all().size());
-        // If you want to run ioGame server, uncomment the runtime stub below:
-        // new IoGameRuntime(svc).start(Integer.parseInt(System.getProperty("port", "10100")));
+        int port = Integer.parseInt(System.getProperty("port", "10100"));
+        IoGameRuntime rt = new IoGameRuntime(svc);
+        rt.start(port);
+        log.info("Server listening on ws://0.0.0.0:{}/", port);
+        try {
+            Thread.currentThread().join();
+        } catch (InterruptedException ignore) {}
     }
 }
