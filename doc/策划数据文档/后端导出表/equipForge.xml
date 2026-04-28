@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+      <data minLevel="1" maxLevel="5" equips="3000001_1,4000401_41,4000405_40,4000501_10,4000505_10" godlyRatio="1000"/>
+      <data minLevel="6" maxLevel="10" equips="3000001_1,4000405_41,4000410_40,4000505_10,4000510_10" godlyRatio="950"/>
+      <data minLevel="11" maxLevel="15" equips="3000001_1,4000415_41,4000410_40,4000510_10,4000515_10" godlyRatio="900"/>
+      <data minLevel="16" maxLevel="20" equips="3000001_1,4000415_41,4000420_40,4000515_10,4000520_10" godlyRatio="850"/>
+      <data minLevel="21" maxLevel="25" equips="3000001_1,4000420_41,4000425_40,4000520_10,4000525_10" godlyRatio="800"/>
+      <data minLevel="26" maxLevel="30" equips="3000001_1,4000425_41,4000430_40,4000525_10,4000530_10" godlyRatio="750"/>
+      <data minLevel="31" maxLevel="35" equips="3000001_1,4000430_41,4000435_40,4000530_10,4000535_10" godlyRatio="750"/>
+      <data minLevel="36" maxLevel="40" equips="3000001_1,4000435_41,4000440_40,4000535_10,4000540_10" godlyRatio="750"/>
+      <data minLevel="41" maxLevel="45" equips="3000001_1,4000440_41,4000445_40,4000540_14,4000545_6" godlyRatio="750"/>
+      <data minLevel="46" maxLevel="50" equips="3000001_1,4000445_61,4000450_20,4000545_14,4000550_6" godlyRatio="750"/>
+      <data minLevel="51" maxLevel="55" equips="3000001_1,4000450_61,4000455_20,4000550_14,4000555_6" godlyRatio="750"/>
+      <data minLevel="56" maxLevel="60" equips="3000001_1,4000455_61,4000460_20,4000555_14,4000560_6" godlyRatio="750"/>
+      <data minLevel="61" maxLevel="65" equips="3000001_1,4000460_65,4000465_10,4000560_20,4000565_4" godlyRatio="750"/>
+      <data minLevel="66" maxLevel="70" equips="3000001_1,4000460_41,4000560_20,4000465_30,4000565_8" godlyRatio="750"/>
+      <data minLevel="71" maxLevel="72" equips="3000001_1,4000470_64,4004072_16,4000570_15,4005072_4" godlyRatio="750"/>
+      <data minLevel="73" maxLevel="74" equips="3000001_1,4004072_64,4004074_16,4005072_15,4005074_4" godlyRatio="750"/>
+      <data minLevel="75" maxLevel="76" equips="3000001_1,4004074_64,4004076_16,4005074_15,4005076_4" godlyRatio="750"/>
+      <data minLevel="77" maxLevel="78" equips="3000001_1,4004076_64,4004078_16,4005076_15,4005078_4" godlyRatio="750"/>
+      <data minLevel="79" maxLevel="80" equips="3000001_1,4004078_64,4004080_16,4005078_15,4005080_4" godlyRatio="750"/>
+      <data minLevel="81" maxLevel="82" equips="3000001_1,4004080_64,4004082_16,4005080_15,4005082_4" godlyRatio="750"/>
+      <data minLevel="83" maxLevel="84" equips="3000001_1,4004082_64,4004084_16,4005082_15,4005084_4" godlyRatio="750"/>
+      <data minLevel="85" maxLevel="86" equips="3000001_1,4004084_64,4004086_16,4005084_15,4005086_4" godlyRatio="750"/>
+      <data minLevel="87" maxLevel="88" equips="3000001_1,4004086_64,4004088_16,4005086_15,4005088_4" godlyRatio="750"/>
+      <data minLevel="89" maxLevel="90" equips="3000001_1,4004088_64,4004090_16,4005088_15,4005090_4" godlyRatio="750"/>
+      <data minLevel="91" maxLevel="92" equips="3000001_1,4004090_64,4004092_16,4005090_15,4005092_4" godlyRatio="750"/>
+      <data minLevel="93" maxLevel="94" equips="3000001_1,4004092_64,4004094_16,4005092_15,4005094_4" godlyRatio="750"/>
+      <data minLevel="95" maxLevel="96" equips="3000001_1,4004094_64,4004096_16,4005094_15,4005096_4" godlyRatio="750"/>
+      <data minLevel="97" maxLevel="98" equips="3000001_1,4004096_64,4004098_16,4005096_15,4005098_4" godlyRatio="750"/>
+      <data minLevel="99" maxLevel="100" equips="3000001_1,4004098_64,4004100_16,4005098_15,4005100_4" godlyRatio="750"/>
+</root>

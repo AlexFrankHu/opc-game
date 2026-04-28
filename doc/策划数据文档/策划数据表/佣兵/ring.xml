@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+      <data roleId="7" ringId="1" needStarLevel="3" activeCost="200000" ringName="振奋光环" effectAttrType="105" effectAttrValue="500"/>
+      <data roleId="7" ringId="2" needStarLevel="6" activeCost="500000" ringName="坚韧光环" effectAttrType="101" effectAttrValue="1000"/>
+      <data roleId="7" ringId="3" needStarLevel="10" activeCost="1500000" ringName="戍卫光环" effectAttrType="106" effectAttrValue="1500"/>
+      <data roleId="8" ringId="4" needStarLevel="3" activeCost="200000" ringName="专注光环" effectAttrType="109" effectAttrValue="1000"/>
+      <data roleId="8" ringId="5" needStarLevel="6" activeCost="500000" ringName="瞬息光环" effectAttrType="110" effectAttrValue="1000"/>
+      <data roleId="8" ringId="6" needStarLevel="10" activeCost="1500000" ringName="洞悉光环" effectAttrType="1007" effectAttrValue="30"/>
+      <data roleId="9" ringId="7" needStarLevel="3" activeCost="200000" ringName="辉煌光环" effectAttrType="102" effectAttrValue="1000"/>
+      <data roleId="9" ringId="8" needStarLevel="6" activeCost="500000" ringName="灵隐光环" effectAttrType="107" effectAttrValue="1000"/>
+      <data roleId="9" ringId="9" needStarLevel="10" activeCost="1500000" ringName="洪流光环" effectAttrType="104" effectAttrValue="1000"/>
+</root>

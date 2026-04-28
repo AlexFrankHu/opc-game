@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+      <data itemId="10001" itemCount="10" minLevel="1" maxLevel="5" equips="4000501_0_1_50,4000505_0_1_50"/>
+      <data itemId="10001" itemCount="10" minLevel="6" maxLevel="10" equips="4000505_0_1_50,4000510_0_1_50"/>
+      <data itemId="10001" itemCount="10" minLevel="11" maxLevel="15" equips="4000510_0_1_50,4000515_0_1_50"/>
+      <data itemId="10001" itemCount="10" minLevel="16" maxLevel="20" equips="4000515_0_1_50,4000520_0_1_50"/>
+      <data itemId="10001" itemCount="10" minLevel="21" maxLevel="25" equips="4000520_0_1_50,4000525_0_1_50"/>
+      <data itemId="10001" itemCount="10" minLevel="26" maxLevel="30" equips="4000525_0_1_50,4000530_0_1_50"/>
+      <data itemId="10001" itemCount="10" minLevel="31" maxLevel="35" equips="4000530_0_1_50,4000535_0_1_50"/>
+      <data itemId="10001" itemCount="10" minLevel="36" maxLevel="40" equips="4000535_0_1_50,4000540_0_1_50"/>
+      <data itemId="10001" itemCount="10" minLevel="41" maxLevel="45" equips="4000540_0_1_50,4000545_0_1_50"/>
+      <data itemId="10001" itemCount="10" minLevel="46" maxLevel="50" equips="4000545_0_1_50,4000550_0_1_50"/>
+      <data itemId="10001" itemCount="10" minLevel="51" maxLevel="55" equips="4000550_0_1_50,4000555_0_1_50"/>
+      <data itemId="10001" itemCount="10" minLevel="56" maxLevel="60" equips="4000555_0_1_50,4000560_0_1_50"/>
+      <data itemId="10001" itemCount="10" minLevel="61" maxLevel="65" equips="4000560_0_1_50,4000565_0_1_50"/>
+      <data itemId="10001" itemCount="10" minLevel="66" maxLevel="70" equips="4000565_0_1_100"/>
+      <data itemId="10001" itemCount="10" minLevel="71" maxLevel="75" equips="4000565_0_1_101"/>
+      <data itemId="10001" itemCount="10" minLevel="76" maxLevel="80" equips="4000565_0_1_102"/>
+      <data itemId="10001" itemCount="10" minLevel="81" maxLevel="85" equips="4000565_0_1_103"/>
+      <data itemId="10001" itemCount="10" minLevel="86" maxLevel="90" equips="4000565_0_1_104"/>
+      <data itemId="10001" itemCount="10" minLevel="91" maxLevel="95" equips="4000565_0_1_105"/>
+      <data itemId="10001" itemCount="10" minLevel="96" maxLevel="100" equips="4000565_0_1_106"/>
+</root>

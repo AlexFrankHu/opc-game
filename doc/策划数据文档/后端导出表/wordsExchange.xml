@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+<!-- 
+	type 1.终极豪礼 2.乐享好礼 3.节日好礼 4.单字大礼
+	itemNeed 需要的道具字
+	itemObtain 兑换出来的奖励
+	dailyLimit 每日兑换次数限制
+	type 为4的dailyLimit只会取第一条的配置
+ -->
+ 	<data type="1" itemNeed="30000_10008_3,30000_10009_3,30000_10010_3,30000_10011_3,30000_10012_3" itemObtain="30000_10016_1" dailyLimit="-1"/>
+	<data type="2" itemNeed="30000_10011_1,30000_10012_1" itemObtain="30000_10015_1" dailyLimit="-1"/>
+	<data type="3" itemNeed="30000_10008_5,30000_10009_5,30000_10010_5" itemObtain="30000_10014_1" dailyLimit="-1"/>
+	<data type="4" itemNeed="30000_10008_1" itemObtain="30000_10013_1" dailyLimit="-1"/>
+	<data type="4" itemNeed="30000_10009_1" itemObtain="30000_10013_1" dailyLimit="-1"/>
+	<data type="4" itemNeed="30000_10010_1" itemObtain="30000_10013_1" dailyLimit="-1"/>
+	<data type="4" itemNeed="30000_10011_1" itemObtain="30000_10013_1" dailyLimit="-1"/>
+	<data type="4" itemNeed="30000_10012_1" itemObtain="30000_10013_1" dailyLimit="-1"/>
+</root>

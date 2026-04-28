@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- 达到称号条件配置-->
+<root>
+<!-- id : 称号id
+	 title : 称号名称(后端没使用, 只做区分识别用)
+	 condition :  称号达成条件 
+	type表示称号的类型(不支持修改, 不支持添加新的类型)
+	17001  ：竞技场排名类型(精确)
+	17002 : vip等级类型
+	17003 : 连续登录天数类型
+	17004  ：竞技场排名类型(区间类型)
+	17005 : 战力榜精确类型(不能修改)
+	17006  ： 装备神器件数类型
+	17007 : 团战冠军
+	17008 : 神器星数类型
+ -->
+	<data id="1" title="天下至尊" condition="1" type="17001"/>   
+	<data id="2" title="万人之上" condition="2" type="17001"/>	
+	<data id="3" title="王者之尊" condition="3" type="17001"/>	
+	<data id="4" title="竞技精英" condition="1,20" type="17004"/>	
+	<data id="5" title="珠光宝气" condition="10" type="17002"/>		
+	<data id="6" title="初露倪端" condition="3" type="17002"/>
+	<data id="7" title="富可敌国" condition="15" type="17002"/>
+	<data id="8" title="小有成就" condition="7" type="17003"/>
+	<data id="9" title="毅力可嘉" condition="30" type="17003"/>
+	<data id="10" title="持之以恒" condition="100" type="17003"/>
+	<data id="11" title="狂耀炫闪" condition="10" type="17006"/>
+	<data id="12" title="至尊法神" condition="1" type="17005"/>
+	<data id="13" title="至尊战神" condition="1" type="17005"/>
+	<data id="14" title="至尊猎神" condition="1" type="17005"/>
+	<data id="15" title="天尊法神" condition="2" type="17005"/>
+	<data id="16" title="天尊战神" condition="2" type="17005"/>
+	<data id="17" title="天尊猎神" condition="2" type="17005"/>
+	<data id="18" title="地尊法神" condition="3" type="17005"/>
+	<data id="19" title="地尊战神" condition="3" type="17005"/>
+	<data id="20" title="地尊猎神" condition="3" type="17005"/>
+	<data id="21" title="风暴之王" condition="1" type="17007"/>
+	<data id="22" title="十星神器" condition="10" type="17008"/>
+</root>

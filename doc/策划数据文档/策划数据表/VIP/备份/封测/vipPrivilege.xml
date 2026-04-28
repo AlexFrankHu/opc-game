@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+      <data vipLevel="0" needRechargeGold="0" shopItemCount="6" buyCoinTimes="2" fastFightTimes="0" buyFastFightTimes="1" bossBattleTimes="3" buyBossBattleTimes="0" killBossExtAward="40000_5_1" mercenaryMaxFoster="0"/>
+      <data vipLevel="1" needRechargeGold="100" shopItemCount="6" buyCoinTimes="3" fastFightTimes="0" buyFastFightTimes="3" bossBattleTimes="3" buyBossBattleTimes="1" killBossExtAward="40000_5_1" mercenaryMaxFoster="0"/>
+      <data vipLevel="2" needRechargeGold="300" shopItemCount="6" buyCoinTimes="5" fastFightTimes="0" buyFastFightTimes="4" bossBattleTimes="3" buyBossBattleTimes="2" killBossExtAward="40000_5_1" mercenaryMaxFoster="1"/>
+      <data vipLevel="3" needRechargeGold="500" shopItemCount="7" buyCoinTimes="7" fastFightTimes="0" buyFastFightTimes="5" bossBattleTimes="3" buyBossBattleTimes="3" killBossExtAward="40000_5_1" mercenaryMaxFoster="1"/>
+      <data vipLevel="4" needRechargeGold="900" shopItemCount="7" buyCoinTimes="10" fastFightTimes="0" buyFastFightTimes="6" bossBattleTimes="3" buyBossBattleTimes="4" killBossExtAward="30000_40001_1" mercenaryMaxFoster="1"/>
+      <data vipLevel="5" needRechargeGold="1500" shopItemCount="7" buyCoinTimes="15" fastFightTimes="0" buyFastFightTimes="7" bossBattleTimes="3" buyBossBattleTimes="5" killBossExtAward="30000_40001_1" mercenaryMaxFoster="2"/>
+      <data vipLevel="6" needRechargeGold="3000" shopItemCount="8" buyCoinTimes="20" fastFightTimes="0" buyFastFightTimes="8" bossBattleTimes="3" buyBossBattleTimes="6" killBossExtAward="30000_40001_1" mercenaryMaxFoster="2"/>
+      <data vipLevel="7" needRechargeGold="5000" shopItemCount="8" buyCoinTimes="25" fastFightTimes="0" buyFastFightTimes="9" bossBattleTimes="3" buyBossBattleTimes="7" killBossExtAward="30000_40002_1" mercenaryMaxFoster="2"/>
+      <data vipLevel="8" needRechargeGold="9000" shopItemCount="8" buyCoinTimes="30" fastFightTimes="0" buyFastFightTimes="10" bossBattleTimes="3" buyBossBattleTimes="8" killBossExtAward="30000_40002_1" mercenaryMaxFoster="3"/>
+      <data vipLevel="9" needRechargeGold="15000" shopItemCount="9" buyCoinTimes="35" fastFightTimes="0" buyFastFightTimes="11" bossBattleTimes="3" buyBossBattleTimes="9" killBossExtAward="30000_40002_1" mercenaryMaxFoster="3"/>
+      <data vipLevel="10" needRechargeGold="25000" shopItemCount="9" buyCoinTimes="40" fastFightTimes="0" buyFastFightTimes="12" bossBattleTimes="3" buyBossBattleTimes="10" killBossExtAward="30000_40003_1" mercenaryMaxFoster="3"/>
+      <data vipLevel="11" needRechargeGold="40000" shopItemCount="9" buyCoinTimes="50" fastFightTimes="0" buyFastFightTimes="13" bossBattleTimes="3" buyBossBattleTimes="11" killBossExtAward="30000_40003_1" mercenaryMaxFoster="3"/>
+      <data vipLevel="12" needRechargeGold="60000" shopItemCount="9" buyCoinTimes="60" fastFightTimes="0" buyFastFightTimes="14" bossBattleTimes="3" buyBossBattleTimes="12" killBossExtAward="30000_40003_1" mercenaryMaxFoster="3"/>
+      <data vipLevel="13" needRechargeGold="90000" shopItemCount="9" buyCoinTimes="70" fastFightTimes="0" buyFastFightTimes="16" bossBattleTimes="3" buyBossBattleTimes="13" killBossExtAward="30000_40003_1" mercenaryMaxFoster="3"/>
+      <data vipLevel="14" needRechargeGold="150000" shopItemCount="9" buyCoinTimes="80" fastFightTimes="0" buyFastFightTimes="18" bossBattleTimes="3" buyBossBattleTimes="14" killBossExtAward="30000_40003_1" mercenaryMaxFoster="3"/>
+      <data vipLevel="15" needRechargeGold="250000" shopItemCount="9" buyCoinTimes="100" fastFightTimes="0" buyFastFightTimes="20" bossBattleTimes="3" buyBossBattleTimes="15" killBossExtAward="30000_40003_1" mercenaryMaxFoster="3"/>
+</root>

@@ -1,0 +1,8 @@
+ItemID	page名字	是否有Push动画	Push动画是否在Enter之前	是否有Pop动画	Pop动画是否在Exit之后	是否需要背景虚化(0:不需要；1：单push；多push需要虚化前一个push的page；)	备注
+1	EquipInfoPage	1	0	1	1	0	装备详情
+2	EquipEnhancePage	1	0	1	1	0	装备强化
+3	EquipBaptizePage	1	0	1	1	0	装备洗练
+4	EquipSwallowPage	1	0	1	1	0	神器吞噬
+5	EquipExtendPage	1	0	1	1	0	神器传承
+6	EquipEmbedPage	1	0	1	1	0	宝石镶嵌
+7	EquipSelectPage	1	0	1	1	0	装备选择

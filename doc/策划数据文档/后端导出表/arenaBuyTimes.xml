@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- id：配置编号 minRank:适用该套规制的最大次数-->
+<root>
+      <data id="1" maxTimes="2" price="20" addChallengeTimes="1"/>
+	  <data id="2" maxTimes="5" price="50" addChallengeTimes="1"/>
+	  <data id="3" maxTimes="10" price="100" addChallengeTimes="1"/>
+</root>

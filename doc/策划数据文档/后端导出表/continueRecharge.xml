@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<data id="1" day="1" awards="10000_1002_500000,40000_50200030_1"/>
+	<data id="2" day="2" awards="10000_1002_500000,30000_10001_5"/>
+	<data id="3" day="3" awards="10000_1002_800000"/>
+	<data id="4" day="4" awards="10000_1002_800000,30000_10001_5"/>
+	<data id="5" day="5" awards="10000_1002_1000000"/>
+	<data id="6" day="6" awards="10000_1002_1200000"/>
+	<data id="7" day="7" awards="10000_1002_1200000,30000_10001_5"/>
+	<data id="8" day="8" awards="10000_1002_1500000"/>
+	<data id="9" day="9" awards="10000_1002_1800000"/>
+	<data id="10" day="10" awards="10000_1002_2000000,30000_10001_5"/>
+</root>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+      <data id="1" awardStr="10000_1002_30000" ratioExp="1" ratioCoin="1"/>
+      <data id="2" awardStr="10000_1002_50000" ratioExp="1" ratioCoin="1"/>
+      <data id="3" awardStr="10000_1002_80000,30000_50001_1" ratioExp="1" ratioCoin="1"/>
+      <data id="4" awardStr="10000_1002_100000,30000_50002_1" ratioExp="1" ratioCoin="1"/>
+      <data id="5" awardStr="10000_1002_150000,30000_60001_10" ratioExp="1.05" ratioCoin="1.05"/>
+      <data id="6" awardStr="10000_1002_200000,30000_60001_15" ratioExp="1.05" ratioCoin="1.05"/>
+      <data id="7" awardStr="10000_1002_250000,30000_60001_20,30000_90003_1" ratioExp="1.1" ratioCoin="1.1"/>
+      <data id="8" awardStr="10000_1002_300000,30000_60001_25,30000_90003_1" ratioExp="1.1" ratioCoin="1.1"/>
+      <data id="9" awardStr="10000_1002_400000,30000_60001_30,30000_90003_2,10000_1011_80" ratioExp="1.15" ratioCoin="1.15"/>
+      <data id="10" awardStr="10000_1002_500000,30000_60001_35,30000_90003_2,10000_1011_100" ratioExp="1.15" ratioCoin="1.15"/>
+      <data id="11" awardStr="10000_1002_600000,30000_60001_40,30000_90004_1,10000_1011_120" ratioExp="1.2" ratioCoin="1.2"/>
+      <data id="12" awardStr="10000_1002_700000,30000_60001_45,30000_90004_1,10000_1011_140" ratioExp="1.2" ratioCoin="1.2"/>
+      <data id="13" awardStr="10000_1002_800000,30000_60001_50,30000_90004_2,10000_1011_160" ratioExp="1.25" ratioCoin="1.25"/>
+      <data id="14" awardStr="10000_1002_900000,30000_60001_55,30000_90004_2,10000_1011_180" ratioExp="1.3" ratioCoin="1.3"/>
+      <data id="15" awardStr="10000_1002_1000000,30000_60001_60,30000_90005_1,10000_1011_200" ratioExp="1.4" ratioCoin="1.4"/>
+</root>

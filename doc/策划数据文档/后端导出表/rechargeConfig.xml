@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root currency="RMB">
+	<Recharge id="1" type = "0" amount="100" addNum="0" costMoney="10" valid = "true"/>
+	<Recharge id="2" type = "0" amount="200" addNum="0" costMoney="20" valid = "false"/>
+	<Recharge id="3" type = "0" amount="300" addNum="0" costMoney="30" valid = "false"/>
+	<Recharge id="4" type = "0" amount="500" addNum="0" costMoney="50" valid = "true"/>
+	<Recharge id="5" type = "0" amount="1000" addNum="0" costMoney="100" valid = "true"/>
+	<Recharge id="6" type = "0" amount="2000" addNum="0" costMoney="200" valid = "true"/>
+	<Recharge id="7" type = "0" amount="3000" addNum="0" costMoney="300" valid = "false"/>
+	<Recharge id="8" type = "0" amount="5000" addNum="0" costMoney="500" valid = "true"/>
+	<Recharge id="9" type = "0" amount="10000" addNum="0" costMoney="1000" valid = "true"/>
+	<Recharge id="10" type = "0" amount="20000" addNum="0" costMoney="2000" valid = "true"/>
+	<Recharge id="11" type = "0" amount="30000" addNum="0" costMoney="3000" valid = "true"/>
+	<Recharge id="12" type = "0" amount="50000" addNum="0" costMoney="5000" valid = "false"/>
+	<Recharge id="30" type = "1" amount="0" addNum="0" costMoney="30" valid = "true"/>
+</root>

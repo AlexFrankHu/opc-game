@@ -1,0 +1,2 @@
+id	content
+1	<font  color="#02fd20" face = "HelveticaBD40" size ="100"><p style="margin:10px" >打造帮助</p></font><br/><font  color="#f0f0f0" face = "Helvetica40" size ="100"><p style="margin:10px" >●打造可以将当前显示的装备打造出来。</p></font><br/><font  color="#f0f0f0" face = "Helvetica40" size ="100"><p style="margin:10px" >●打造时需要消耗一定量的的熔炼值。</p></font><br/><font  color="#f0f0f0" face = "Helvetica40" size ="100"><p style="margin:10px" >●除了装备外，还可以打造用来给装备开孔的开孔锤。</p></font><br/><font  color="#f0f0f0" face = "Helvetica40" size ="100"><p style="margin:10px" >●点击刷新按钮可以刷新一个新的可打造装备。</p></font><br/>

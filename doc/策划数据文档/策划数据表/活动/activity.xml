@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- timeType 1永久开放 2开服活动 3按期开放 4活动关闭-->
+<root>
+	<data id="1" timeType="1" name="月卡" levelLimit="1"/>
+	<data id="2" timeType="3" name="每日累计充值（数额）" levelLimit="1" />
+	<data id="3" timeType="2" name="连续充值（天数）（开服活动）" levelLimit="1">
+		<property key="openHours" type="int">299</property>	
+		<property key="activeDay" type="date">2014-01-01 00:00:00</property>	
+	</data>
+	<data id="4" timeType="1" name="每项首值3倍（仅第一次）" levelLimit="1"/>
+	<data id="5" timeType="4" name="微信关注" levelLimit="1"/>
+	<data id="6" timeType="3" name="累计消费（数额）" levelLimit="1"/>
+	<data id="7" timeType="3" name="中秋兑换字活动" levelLimit="1"/>
+	<data id="8" timeType="3" name="掉落活动翻倍" levelLimit="1"/>
+	<data id="9" timeType="3" name="单项充值双倍" levelLimit="1">
+	<!--
+	type 1 表示 所有项参与到底是否翻倍，如果翻倍其他项就不触发
+	type 2 表示 单独项参与到底是否翻倍 
+	 -->
+		<property key="type" type="int">1</property>	
+	</data>
+	<data id="10" timeType="3" name="假日宝藏" levelLimit="1"/>
+	<data id="11" timeType="1" name="公测字活动" levelLimit="1"/>
+</root>

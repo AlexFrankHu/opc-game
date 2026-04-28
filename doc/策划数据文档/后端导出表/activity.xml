@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- timeType 1永久开放 2开服活动 3按期开放 4注册天数活动 5活动关闭-->
+<root>
+	<data id="1" timeType="1" name="月卡" levelLimit="1"/>
+	<data id="2" timeType="3" name="每日累计充值（数额）" levelLimit="1" />
+	<data id="3" timeType="2" name="连续充值（天数）（开服活动）" levelLimit="1">
+		<property key="startHoursAfterOpenSer" type="int">0</property>		
+		<property key="openHours" type="int">299</property>	
+		<property key="activeDay" type="date">2014-01-01 00:00:00</property>	
+	</data>
+	<data id="4" timeType="1" name="每项首值3倍（仅第一次）" levelLimit="1"/>
+	<data id="5" timeType="5" name="微信关注" levelLimit="1"/>
+	<data id="6" timeType="3" name="累计消费（数额）" levelLimit="1"/>
+	<data id="7" timeType="3" name="中秋兑换字活动" levelLimit="1"/>
+	<data id="8" timeType="3" name="装备掉落活动翻倍" levelLimit="1"/>
+	<data id="9" timeType="3" name="单项充值双倍" levelLimit="1">
+		<!--
+		type 1 表示 所有项参与到底是否翻倍，如果翻倍其他项就不触发
+		type 2 表示 单独项参与到底是否翻倍 
+		-->
+		<property key="type" type="int">1</property>	
+	</data>
+	<data id="10" timeType="3" name="假日宝藏" levelLimit="1"/>
+	<data id="11" timeType="1" name="公测字活动" levelLimit="1"/>
+	<data id="12" timeType="3" name="金币掉落双倍" levelLimit="1">
+		<property key="ratio" type="int">2</property>	
+		<property key="activeDay" type="date">2014-01-01 00:00:00</property>	
+	</data>	
+	<data id="13" timeType="3" name="经验掉落双倍" levelLimit="1">
+		<property key="ratio" type="int">2</property>	
+		<property key="activeDay" type="date">2014-01-01 00:00:00</property>	
+	</data>	
+	<!-- 
+	<data id="14" timeType="1" name="竞技场奖励双倍" levelLimit="1">
+		<property key="ratio" type="int">2</property>	
+	</data>
+	-->
+	<data id="15" timeType="3" name="装备掉落双倍" levelLimit="1">
+		<property key="ratio" type="int">2</property>	
+		<property key="activeDay" type="date">2014-01-01 00:00:00</property>	
+	</data>	
+	<data id="16" timeType="3" name="快速战斗收益双倍" levelLimit="1">
+		<property key="ratio" type="int">2</property>	
+		<property key="activeDay" type="date">2014-01-01 00:00:00</property>	
+	</data>	
+	<data id="17" timeType="3" name="熔炼值双倍" levelLimit="1">
+		<property key="ratio" type="int">2</property>	
+		<property key="activeDay" type="date">2014-01-01 00:00:00</property>	
+	</data>	
+	<data id="18" timeType="3" name="装备出售价格双倍" levelLimit="1">
+		<property key="ratio" type="int">2</property>
+		<property key="activeDay" type="date">2014-01-01 00:00:00</property>
+	</data>
+	<data id="19" timeType="3" name="快速战斗消耗减半" levelLimit="1">
+		<property key="ratio" type="float">0.5</property>	
+		<property key="activeDay" type="date">2014-01-01 00:00:00</property>	
+	</data>
+	<data id="20" timeType="4" name="开服双倍活动" levelLimit="1">
+		<property key="day1" type="int">15</property>
+		<property key="day2" type="int">15</property>
+		<property key="day3" type="int">12</property>
+		<property key="day4" type="int">13</property>
+		<property key="day5" type="int">16</property>
+		<property key="day6" type="int">17</property>
+		<property key="day7" type="int">18</property>
+		<property key="day8" type="int">19</property>
+	</data>
+	<data id="21" timeType="3" name="每日单项充值" levelLimit="1" />
+	<data id="22" timeType="5" name="（角色创建时）充值返利" levelLimit="1">
+		<property key="delayDays" type="int">5</property>
+		<property key="rechargeDays" type="int">7</property>
+		<property key="rebateDays" type="int">30</property>
+	</data>
+	<data id="23" timeType="1" name="vip福利" levelLimit="1"></data>
+	<data id="24" timeType="5" name="周卡" levelLimit="1"/>
+	<data id="25" timeType="3" name="远征物资征集活动" levelLimit="1"></data>
+</root>

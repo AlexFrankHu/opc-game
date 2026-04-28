@@ -1,0 +1,2 @@
+id	content
+1	<font  color="#02fd20" face = "HelveticaBD40" size ="100"><p style="margin:10px" >强化帮助</p></font><br/><font  color="#f0f0f0 " face = "Helvetica40" size ="100"><p style="margin:10px" >●强化可以提升装备的基本属性。</p></font><br/><font  color="#f0f0f0 " face = "Helvetica40" size ="100"><p style="margin:10px" >●强化需要消耗一定量的强化精华与金币。</p></font><br/><font  color="#f0f0f0 " face = "Helvetica40" size ="100"><p style="margin:10px" >●强化精华可以通过挑战BOSS副本获得。</p></font><br/><font  color="#f0f0f0 " face = "Helvetica40" size ="100"><p style="margin:10px" >●熔炼卖出已强化的装备会返还全部强化精华。</p></font><br/>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<data id="1" sum="100" 		awards="10000_1001_100,10000_1002_300000" />
+	<data id="2" sum="500" 	    awards="10000_1001_400,30000_40004_10" />
+	<data id="3" sum="1000" 	awards="10000_1001_500,30000_40005_5" />
+</root>

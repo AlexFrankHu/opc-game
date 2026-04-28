@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+      <data id="1" days="7" everydayAwards="10000_1001_20,10000_1011_50,30000_90002_2" goodsId="1" levelUpGoodsId="5"/>
+      <data id="2" days="7" everydayAwards="10000_1001_100,10000_1011_300,30000_90004_1" goodsId="5" levelUpGoodsId="-1"/>
+</root>

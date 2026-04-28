@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<data id="1" donateItemId="10017" addExp="5" award="30000_40006_1"/>
+	<data id="2" donateItemId="10018" addExp="20" award="30000_40007_1"/>
+	<data id="3" donateItemId="10019" addExp="100" award="30000_40008_1"/>
+</root>

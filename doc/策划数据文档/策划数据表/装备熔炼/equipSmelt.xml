@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+      <data equipLevel="1" smeltLevel1="1_70" smeltLevel2="5_10" smeltLevel3="10_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2500" targetEquip5="2500" godlyEquip="1400"/>
+      <data equipLevel="5" smeltLevel1="5_70" smeltLevel2="10_10" smeltLevel3="15_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2500" targetEquip5="2500" godlyEquip="1300"/>
+      <data equipLevel="10" smeltLevel1="10_70" smeltLevel2="15_10" smeltLevel3="20_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2400" targetEquip5="2400" godlyEquip="1200"/>
+      <data equipLevel="15" smeltLevel1="15_70" smeltLevel2="20_10" smeltLevel3="25_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2300" targetEquip5="2300" godlyEquip="1100"/>
+      <data equipLevel="20" smeltLevel1="20_70" smeltLevel2="25_10" smeltLevel3="30_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2200" targetEquip5="2200" godlyEquip="1000"/>
+      <data equipLevel="25" smeltLevel1="25_70" smeltLevel2="30_10" smeltLevel3="35_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2100" targetEquip5="2100" godlyEquip="950"/>
+      <data equipLevel="30" smeltLevel1="30_70" smeltLevel2="35_10" smeltLevel3="40_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="900"/>
+      <data equipLevel="35" smeltLevel1="35_70" smeltLevel2="40_10" smeltLevel3="45_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="850"/>
+      <data equipLevel="40" smeltLevel1="40_70" smeltLevel2="45_10" smeltLevel3="50_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="800"/>
+      <data equipLevel="45" smeltLevel1="45_70" smeltLevel2="50_10" smeltLevel3="55_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="750"/>
+      <data equipLevel="50" smeltLevel1="50_70" smeltLevel2="55_5" smeltLevel3="60_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="750"/>
+      <data equipLevel="55" smeltLevel1="55_70" smeltLevel2="60_3" smeltLevel3="65_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="750"/>
+      <data equipLevel="60" smeltLevel1="60_70" smeltLevel2="65_1" smeltLevel3="70_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="750"/>
+      <data equipLevel="65" smeltLevel1="65_70" smeltLevel2="70_0" smeltLevel3="75_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="750"/>
+      <data equipLevel="70" smeltLevel1="70_70" smeltLevel2="75_0" smeltLevel3="80_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="750"/>
+      <data equipLevel="75" smeltLevel1="75_70" smeltLevel2="80_0" smeltLevel3="85_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="750"/>
+      <data equipLevel="80" smeltLevel1="80_70" smeltLevel2="85_0" smeltLevel3="90_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="750"/>
+      <data equipLevel="85" smeltLevel1="85_70" smeltLevel2="90_0" smeltLevel3="95_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="750"/>
+      <data equipLevel="90" smeltLevel1="90_70" smeltLevel2="95_0" smeltLevel3="100_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="750"/>
+      <data equipLevel="95" smeltLevel1="95_70" smeltLevel2="100_0" smeltLevel3="105_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="750"/>
+      <data equipLevel="100" smeltLevel1="100_70" smeltLevel2="100_0" smeltLevel3="110_0" targetEquip2="3000" targetEquip3="3500" targetEquip4="2000" targetEquip5="2000" godlyEquip="750"/>
+</root>

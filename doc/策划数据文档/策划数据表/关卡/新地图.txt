@@ -1,0 +1,16 @@
+灵魂洪炉		80	Dungeon	地下城
+萨隆矿坑		80	Dungeon	地下城
+映像大厅		80	Dungeon	地下城
+净化斯坦索姆		78 - 80	Dungeon	地下城
+冠军的试炼		78 - 80	Dungeon	地下城
+乌特加德之巅		77 - 80	Dungeon	地下城
+闪电大厅		77 - 80	Dungeon	地下城
+魔环		77 - 80	Dungeon	地下城
+岩石大厅		75 - 80	Dungeon	地下城
+古达克		74 - 80	Dungeon	地下城
+紫罗兰监狱		73 - 80	Dungeon	地下城
+达克萨隆要塞		72 - 80	Dungeon	地下城
+安卡赫特：古代王国		71 - 80	Dungeon	地下城
+艾卓-尼鲁布		70 - 80	Dungeon	地下城
+魔枢		69 - 79	Dungeon	地下城
+乌特加德城堡		68 - 78	Dungeon

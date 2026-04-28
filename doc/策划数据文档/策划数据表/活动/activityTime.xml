@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- stageId 为活动期号, ="-1"时该活动将不受startTime, endTime, closeTime的约束 -->
+<root>
+      <data id="1" activityId="1" stageId="-1" startTime="0" endTime="0" closeTime="0"/>
+      <data id="2" activityId="3" stageId="-1" startTime="0" endTime="0" closeTime="0"/>
+      <data id="3" activityId="4" stageId="-1" startTime="0" endTime="0" closeTime="0"/>
+      <data id="4" activityId="5" stageId="-1" startTime="0" endTime="0" closeTime="0"/>
+      <data id="6" activityId="6" stageId="1" startTime="2014-09-04_11:00:00" endTime="2014-09-10_00:00:00" closeTime="2014-09-12_00:00:00"/>
+      <data id="5" activityId="7" stageId="1" startTime="2014-09-05_10:30:00" endTime="2014-09-10_00:00:00" closeTime="2014-09-12_00:00:00"/>
+      <data id="7" activityId="8" stageId="1" startTime="2014-09-17_10:50:00" endTime="2014-10-03_23:59:59" closeTime="2014-10-03_23:59:59"/>
+      <data id="9" activityId="9" stageId="1" startTime="2014-09-17_10:50:00" endTime="2014-10-07_23:59:59" closeTime="2014-10-07_23:59:59"/>
+      <data id="10" activityId="10" stageId="1" startTime="2014-09-20_10:50:00" endTime="2014-10-03_23:59:59" closeTime="2014-10-03_23:59:59"/>
+</root>

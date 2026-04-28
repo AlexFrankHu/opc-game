@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<data id="1" singleRecharge="100" 	awards="10000_1001_100,30000_40007_5"/>
+	<data id="2" singleRecharge="500" 	awards="10000_1001_500,30000_40008_5"/>
+	<data id="3" singleRecharge="1000" 	awards="10000_1001_1000,30000_40008_10"/>
+</root>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- stageId 为活动期号, ="-1"时该活动将不受startTime, endTime, closeTime的约束 -->
+<root>
+	  <!-- 月卡-->
+      <data id="1" activityId="1" stageId="-1" startTime="0" endTime="0" closeTime="0"/>
+	  
+      <!-- 连续充值（天数）（开服活动）-->
+	  <data id="2" activityId="3" stageId="-1" startTime="0" endTime="0" closeTime="0"/>
+	  
+      <!-- 每项首值3倍（仅第一次）-->
+	  <data id="3" activityId="4" stageId="-1" startTime="0" endTime="0" closeTime="0"/>
+	  
+      <!-- 微信关注-->
+	  <data id="4" activityId="5" stageId="-1" startTime="0" endTime="0" closeTime="0"/>
+	  
+      <!-- 累计消费（数额）-->
+	  <data id="6" activityId="6" stageId="1" startTime="2014-09-04_11:00:00" endTime="2014-09-10_00:00:00" closeTime="2014-09-12_00:00:00"/>
+	  
+      <!-- 中秋兑换字活动-->
+	  <data id="5" activityId="7" stageId="1" startTime="2014-09-05_10:30:00" endTime="2014-09-10_00:00:00" closeTime="2014-09-12_00:00:00"/>
+	  
+      <!-- 活动地图表配置翻倍-->
+	  <data id="7" activityId="8" stageId="2" startTime="2014-09-29_10:50:00" endTime="2014-09-29_23:59:59" closeTime="2014-09-29_23:59:59"/>
+	  <data id="80002" activityId="8" stageId="3" startTime="2014-09-30_10:50:00" endTime="2014-10-03_23:59:59" closeTime="2014-10-03_23:59:59"/>
+	  <data id="80003" activityId="8" stageId="4" startTime="2014-10-06_10:50:00" endTime="2014-10-07_23:59:59" closeTime="2014-10-07_23:59:59"/>
+	  <data id="80005" activityId="8" stageId="5" startTime="2014-10-14_10:30:00" endTime="2014-10-17_23:59:59" closeTime="2014-10-17_23:59:59"/>
+	  <data id="80006" activityId="8" stageId="6" startTime="2014-10-20_09:30:00" endTime="2014-10-21_23:59:59" closeTime="2014-10-21_23:59:59"/>
+	  <data id="80007" activityId="8" stageId="7" startTime="2014-10-28_09:30:00" endTime="2014-10-28_23:59:59" closeTime="2014-10-28_23:59:59"/>
+      <!-- 单项充值双倍-->
+      <data id="9" activityId="9" stageId="1" startTime="2014-09-30_10:50:00" endTime="2014-10-06_23:59:59" closeTime="2014-10-06_23:59:59"/>
+	  <data id="90002" activityId="9" stageId="2" startTime="2014-10-28_10:50:00" endTime="2014-10-28_23:59:59" closeTime="2014-10-28_23:59:59"/>
+      <!-- 假日宝藏-->
+      <data id="10" activityId="10" stageId="1" startTime="2014-09-30_10:50:00" endTime="2014-10-03_23:59:59" closeTime="2014-10-03_23:59:59"/>
+	  <data id="100002" activityId="10" stageId="2" startTime="2014-10-14_10:30:00" endTime="2014-10-17_23:59:59" closeTime="2014-10-17_23:59:59"/>
+	  
+	  <!-- 每日累计充值（数额）-->
+	  <data id="11" activityId="2" stageId="1" startTime="2014-09-30_10:50:00" endTime="2014-10-06_23:59:59" closeTime="2014-10-06_23:59:59"/>
+	  <data id="110002" activityId="2" stageId="2" startTime="2014-10-14_10:30:00" endTime="2014-10-20_23:59:59" closeTime="2014-10-20_23:59:59"/>
+	  <!-- 每日单项充值返利 -->
+	  <data id="120001" activityId="21" stageId="1" startTime="2014-10-20_10:30:00" endTime="2014-10-27_23:59:59" closeTime="2014-10-27_23:59:59"/>
+	  <data id="120002" activityId="21" stageId="2" startTime="2014-10-28_10:30:00" endTime="2014-10-28_23:59:59" closeTime="2014-10-28_23:59:59"/>
+	  <!-- 双倍装备掉落 -->
+	  <data id="130001" activityId="15" stageId="1" startTime="2014-09-20_10:00:00" endTime="2014-09-21_23:59:59" closeTime="2014-09-21_23:59:59"/>
+	  
+	  <!-- 双倍经验掉落 -->
+	  <data id="140001" activityId="13" stageId="1" startTime="2014-10-23_00:01:00" endTime="2014-10-23_23:59:59" closeTime="2014-10-23_23:59:59"/>
+	  
+	  <!-- 双倍金币掉落 -->
+	  <data id="150001" activityId="12" stageId="1" startTime="2014-10-22_00:01:00" endTime="2014-10-22_23:59:59" closeTime="2014-10-22_23:59:59"/>
+	  
+	  <!-- 快速战斗双倍掉落 -->
+	  <data id="160001" activityId="16" stageId="1" startTime="2014-10-24_00:01:00" endTime="2014-10-24_23:59:59" closeTime="2014-10-24_23:59:59"/>
+	  	  
+	  <!-- 熔炼双倍 -->
+	  <data id="170001" activityId="17" stageId="1" startTime="2014-10-25_00:01:00" endTime="2014-10-25_23:59:59" closeTime="2014-10-25_23:59:59"/>
+	  
+	  <!-- 卖装备双倍金币 -->
+	  <data id="180001" activityId="18" stageId="1" startTime="2014-10-26_00:01:00" endTime="2014-10-26_23:59:59" closeTime="2014-10-26_23:59:59"/>
+	  
+	  <!-- 快速战斗半价 -->
+	  <data id="190001" activityId="19" stageId="1" startTime="2014-10-27_00:01:00" endTime="2014-10-27_23:59:59" closeTime="2014-10-27_23:59:59"/>
+	  
+	  <!-- vip福利 -->
+	  <data id="230001" activityId="23" stageId="-1" startTime="0" endTime="0" closeTime="0"/>
+	  
+	  <!-- 周卡 -->
+	  <data id="240001" activityId="24" stageId="1" startTime="2014-10-20_10:30:00" endTime="2014-10-30_23:59:59" closeTime="2014-11-06_23:59:59"/>
+	  
+	  <!-- 远征物资活动 -->
+	  <data id="250001" activityId="25" stageId="1" startTime="2014-10-20_10:30:00" endTime="2014-10-28_23:59:59" closeTime="2014-10-28_23:59:59"/>
+</root>

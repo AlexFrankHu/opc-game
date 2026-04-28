@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+      <data level="1" exp="1" exp2="1"/>
+      <data level="2" exp="4" exp2="4"/>
+      <data level="3" exp="9" exp2="9"/>
+      <data level="4" exp="16" exp2="16"/>
+      <data level="5" exp="25" exp2="25"/>
+      <data level="6" exp="37" exp2="37"/>
+      <data level="7" exp="52" exp2="52"/>
+      <data level="8" exp="70" exp2="70"/>
+      <data level="9" exp="91" exp2="91"/>
+      <data level="10" exp="115" exp2="115"/>
+      <data level="11" exp="143" exp2="143"/>
+      <data level="12" exp="175" exp2="175"/>
+      <data level="13" exp="211" exp2="211"/>
+      <data level="14" exp="251" exp2="251"/>
+      <data level="15" exp="295" exp2="295"/>
+</root>

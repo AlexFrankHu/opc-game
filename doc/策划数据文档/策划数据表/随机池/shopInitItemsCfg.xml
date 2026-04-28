@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+      <data job="1" itemType="30000" itemId="10001" itemCount="1" price="240" buyType="2" discount="100"/>
+      <data job="1" itemType="30000" itemId="50003" itemCount="1" price="240" buyType="2" discount="80"/>
+      <data job="1" itemType="30000" itemId="50001" itemCount="3" price="70" buyType="2" discount="10"/>
+      <data job="1" itemType="40000" itemId="40051051" itemCount="1" price="24000" buyType="1" discount="100"/>
+      <data job="1" itemType="40000" itemId="40050030" itemCount="1" price="50" buyType="2" discount="80"/>
+      <data job="1" itemType="40000" itemId="40050010" itemCount="1" price="15000" buyType="1" discount="50"/>
+      <data job="2" itemType="30000" itemId="10001" itemCount="1" price="240" buyType="2" discount="100"/>
+      <data job="2" itemType="30000" itemId="50003" itemCount="1" price="240" buyType="2" discount="80"/>
+      <data job="2" itemType="30000" itemId="50001" itemCount="3" price="70" buyType="2" discount="10"/>
+      <data job="2" itemType="40000" itemId="40052051" itemCount="1" price="24000" buyType="1" discount="100"/>
+      <data job="2" itemType="40000" itemId="40050030" itemCount="1" price="50" buyType="2" discount="80"/>
+      <data job="2" itemType="40000" itemId="40050010" itemCount="1" price="15000" buyType="1" discount="50"/>
+      <data job="3" itemType="30000" itemId="10001" itemCount="1" price="240" buyType="2" discount="100"/>
+      <data job="3" itemType="30000" itemId="50003" itemCount="1" price="240" buyType="2" discount="80"/>
+      <data job="3" itemType="30000" itemId="50001" itemCount="3" price="70" buyType="2" discount="10"/>
+      <data job="3" itemType="40000" itemId="40053051" itemCount="1" price="24000" buyType="1" discount="100"/>
+      <data job="3" itemType="40000" itemId="40050030" itemCount="1" price="50" buyType="2" discount="80"/>
+      <data job="3" itemType="40000" itemId="40050010" itemCount="1" price="15000" buyType="1" discount="50"/>
+</root>

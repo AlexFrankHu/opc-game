@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- 
+ratio 额外增加钻石倍数
+-->
+<root>
+	<data goodsId="9" ratio="1" />
+</root>

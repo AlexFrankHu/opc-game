@@ -1,0 +1,14 @@
+id	名称	品质	描述	对应Icon图片路径
+1001	钻石	1	充值或活动获得，可购买各种道具	Item/2.png
+1002	金币	1	基础货币，可以强化装备等	Item/1.png
+1003	等级	1	等级	UI/MainScene/UI/u_Icobg07.png
+1004	经验	1	经验	UI/MainScene/UI/u_Icobg07.png
+1005	Vip等级	1	Vip等级	UI/MainScene/UI/u_Icobg07.png
+1006	熔炼值	1	熔炼值	UI/MainScene/UI/u_Icobg07.png
+1007	贡献值	1	贡献值	UI/MainScene/UI/u_Icobg07.png
+1008	工会经验	1	工会经验	UI/MainScene/UI/u_Icobg07.png
+1009	boss挑战次数	1	boss挑战次数	UI/MainScene/UI/u_Icobg07.png
+1010	荣誉	1	荣誉点数 用于竞技场兑换商品	UI/MainScene/UI/u_Icobg07.png
+1011	声望	1	声望点数 用于兑换声望神器	Item/18.png
+1012	精英副本次数	1	精英副本次数	UI/MainScene/UI/u_Icobg07.png
+2001	魔兽元气	1	魔兽元气 快速战斗、阵营战可得20点元气 地图Boss、多人团战可得10点元气 竞技场挑战玩家成功可得5点元气	Item/18.png
