@@ -9,10 +9,13 @@ CREATE DATABASE IF NOT EXISTS lastbastion
 
 USE lastbastion;
 
+-- 必须与 JdbcPlayerStore.java 里的 CREATE TABLE IF NOT EXISTS 完全一致，
+-- 否则二者建表语义冲突，会导致 INSERT 报 "Field 'updated_at' doesn't have a default value"。
 CREATE TABLE IF NOT EXISTS player_snapshot (
     external_id VARCHAR(128) NOT NULL,
     snapshot    LONGBLOB     NOT NULL,
-    updated_at  BIGINT       NOT NULL,
+    updated_at  DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP
+                                      ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (external_id),
     KEY idx_updated_at (updated_at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
