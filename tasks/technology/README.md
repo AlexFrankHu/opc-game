@@ -24,7 +24,13 @@
 | TASK-012 | [TASK-012-numeric-config-integration.md](./TASK-012-numeric-config-integration.md) | 数值配置接入 | P0 | 已完成 |
 | TASK-013 | [TASK-013-balance-simulation-validation.md](./TASK-013-balance-simulation-validation.md) | 自动化模拟与回归 | P0 | 已完成 |
 
-> 状态 "MVP 骨架完成" 对应首轮服务端实现 + 单元测试 + Cocos 客户端骨架，代码位于 [../SourceCode/](../SourceCode/)。技能表、图形资源、运行时 ioGame 网络与支付 SDK 接入属于后续迭代。
+> 状态 "MVP 骨架完成" 对应首轮服务端实现 + 单元测试 + Cocos 客户端骨架，代码位于 [../SourceCode/](../SourceCode/)。技能表、图形资源与支付 SDK 接入属于后续迭代。
+>
+> 后续阶段补充交付物：
+> - **Phase B**：[`SourceCode/web-demo/`](../../SourceCode/web-demo/) 浏览器测试端到端 demo（无引擎依赖）
+> - **Phase C**：登录鉴权（HMAC-SHA256，env `LOGIN_SHARED_SECRET`）+ JdbcPlayerStore + RedisPlayerStore
+> - **Phase D**：[`deploy/`](../../deploy/) 测试服一键部署脚本（Docker / Nginx / MySQL / Redis / systemd / healthz）
+> - **Phase E**：[`tasks/product/SURVIVOR-ABILITY-REVIEW.md`](../product/SURVIVOR-ABILITY-REVIEW.md) 数值/技能策划 review 表 + balance-sim baseline 快照
 
 ---
 

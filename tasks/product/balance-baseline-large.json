@@ -1,0 +1,85 @@
+{
+  "sims" : {
+    "gacha" : {
+      "pulls" : 100000,
+      "pityLimit" : 80,
+      "pityHits" : 531,
+      "maxPityRun" : 79,
+      "rates" : {
+        "RARE" : {
+          "expected" : 0.85,
+          "observed" : 0.84502,
+          "delta" : -0.00498
+        },
+        "EPIC" : {
+          "expected" : 0.13,
+          "observed" : 0.12964,
+          "delta" : -3.6E-4
+        },
+        "LEGENDARY" : {
+          "expected" : 0.02,
+          "observed" : 0.02534,
+          "delta" : 0.00534
+        }
+      }
+    },
+    "gear" : {
+      "trials" : 2000,
+      "avgFinalLevel" : 20.0,
+      "reachLv15Pct" : 1.0,
+      "reachLv20Pct" : 1.0,
+      "totalAttempts" : 74215,
+      "failRate" : 0.461,
+      "finalLevelHistogram" : {
+        "20" : 2000
+      }
+    },
+    "combat" : {
+      "battlesPerProfile" : 200,
+      "equalPowerWinRate" : 0.56,
+      "equalAvgRounds" : 20.58,
+      "strongPowerWinRate" : 1.0,
+      "strongAvgRounds" : 10.0,
+      "weakPowerWinRate" : 0.0,
+      "weakAvgRounds" : 10.605
+    },
+    "zone_idle" : {
+      "fightsPerHour" : 120,
+      "idleCapHours" : 12,
+      "idleCapPremiumHours" : 24,
+      "fights12h" : 1440,
+      "fights24h" : 2880,
+      "exampleProjection" : {
+        "expectedCredits12h" : 72000,
+        "expectedCredits24h" : 144000
+      }
+    },
+    "battlepass" : {
+      "dailyFreeXp" : 600,
+      "totalXpDay30" : 18000,
+      "totalXpDay60" : 36000,
+      "levelAtDay30" : 28,
+      "levelAtDay60" : 42,
+      "xpToLv50" : 48250
+    },
+    "arena" : {
+      "players" : 100,
+      "days" : 30,
+      "scoreMin" : 0,
+      "scoreMax" : 1455,
+      "scoreMean" : 444.95,
+      "rankReached" : {
+        "BRONZE" : 100,
+        "SILVER" : 8,
+        "GOLD" : 0,
+        "PLATINUM" : 0,
+        "DIAMOND" : 0,
+        "MASTER" : 0,
+        "KING" : 0
+      },
+      "masterPlusPct" : 0.0
+    }
+  },
+  "assertionFailures" : { },
+  "generatedAtMs" : 1777389310151
+}
