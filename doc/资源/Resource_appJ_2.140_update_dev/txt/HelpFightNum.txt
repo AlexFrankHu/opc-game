@@ -1,0 +1,2 @@
+id	content
+1	<font  color="#02fd20" face = "HelveticaBD40" size ="100"><p style="margin:10px" >战斗力排行榜</p></font><br/><font  color="#f0f0f0" face = "Helvetica40" size ="100"><p style="margin:10px" >●战斗力排行榜是根据玩家的职业分别进行排名的排行榜。玩家可以看到自己在本职业中的排名情况。玩家也可以在这里看到整个服务器的各职业的情况</p></font><br/>

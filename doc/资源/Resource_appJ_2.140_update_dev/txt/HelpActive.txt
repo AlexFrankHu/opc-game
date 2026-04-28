@@ -1,0 +1,2 @@
+id	content
+1	<font  color="#02fd20" face = "HelveticaBD40" size ="100"><p style="margin:10px" >活动帮助</p></font><br/><font  color="#f0f0f0" face = "Helvetica40" size ="100"><p style="margin:10px" >●我们会不定期的推出各类节日、限时活动哦！还请大家多多关注活动页面哦！</p></font>

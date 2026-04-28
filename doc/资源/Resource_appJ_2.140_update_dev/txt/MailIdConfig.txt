@@ -1,0 +1,19 @@
+ID	内容
+1	<font  color="#ffffff" face = "HelveticaBD32" size ="100">恭喜你获得竞技排行第#v1#名<br/>可获得奖励：</font>
+2	<font  color="#ffffff" face = "HelveticaBD32" >#v1#您在竞技场中被</font><font  color="#FFA500" face = "HelveticaBD32">#v2#</font><font  color="#ffffff" face = "HelveticaBD32" >打败，竞技排名由</font><font  color="#02fd20" face = "HelveticaBD32">#v3#</font><font  color="#ffffff" face = "HelveticaBD32">名下降至</font><font  color="#FF0000" face = "HelveticaBD32">#v4#</font><font  color="#ffffff" face = "HelveticaBD32">名。</font>
+3	<font  color="#ffffff" face = "HelveticaBD32" size ="100">在#v1#的团战中，您所在的队伍经过#v2#轮战斗获得冠军<br/>可获得奖励：</font>
+4	<font  color="#ffffff" face = "HelveticaBD32" size ="100">在#v1#的团战中，您所在的队伍经过#v2#轮战斗，被击败<br/>可获得奖励：</font>
+5	<font  color="#ffffff" face = "HelveticaBD32" size ="100">最新战报！你所在小队在#v1#的团战中经过#v2#轮战斗，获得冠军！<br/>下场请继续努力！</font>
+6	<font  color="#ffffff" face = "HelveticaBD32" size ="100">最新战报！你所在小队在#v1#的团战中经过#v2#轮战斗，被击败！<br/>下场请继续努力！</font>
+7	<font  color="#ffffff" face = "HelveticaBD32" size ="100">月卡每日返钻，您的月卡剩余#v1#天</font>
+9	<font  color="#ffffff" face = "HelveticaBD26" >#v1#你挑战</font><font color="#FFA500" face = "HelveticaBD26">#v2#</font><font  color="#ffffff" face = "HelveticaBD26" >成功，排名由</font><font  color="#02fd20" face = "HelveticaBD26">#v3#</font><font  color="#ffffff" face = "HelveticaBD26">升至</font><font  color="#FF0000" face = "HelveticaBD26">#v4#</font>
+10	<font  color="#ffffff" face = "HelveticaBD26" >#v1#</font><font color="#FFA500" face = "HelveticaBD26">#v2#</font><font  color="#ffffff" face = "HelveticaBD26" >挑战你失败，排名不变</font>
+11	<font  color="#ffffff" face = "HelveticaBD26" >#v1#你挑战</font><font color="#FFA500" face = "HelveticaBD26">#v2#</font><font  color="#ffffff" face = "HelveticaBD26" >失败，排名不变</font>
+12	<font  color="#ffffff" face = "HelveticaBD26" >#v1#你被</font><font  color="#FFA500" face = "HelveticaBD26">#v2#</font><font  color="#ffffff" face = "HelveticaBD26" >打败，排名由</font><font  color="#02fd20" face = "HelveticaBD26">#v3#</font><font  color="#ffffff" face = "HelveticaBD26">降至</font><font  color="#FF0000" face = "HelveticaBD26">#v4#</font>
+13	<font  color="#ffffff" face = "HelveticaBD32" size ="100">在#v1#日的战场战斗中，您所在的霜狼阵营获得胜利，额外获得100点声望，获得：</font>
+14	<font  color="#ffffff" face = "HelveticaBD32" size ="100">在#v1#日的战场战斗中，您所在的霜狼阵营被击败，共获得了：</font>
+15	<font  color="#ffffff" face = "HelveticaBD32" size ="100">在#v1#日的战场战斗中，您所在的炎狮阵营获得胜利，额外获得100点声望，获得：</font>
+16	<font  color="#ffffff" face = "HelveticaBD32" size ="100">在#v1#日的战场战斗中，您所在的炎狮阵营被击败，共获得了：</font>
+17	<font  color="#ffffff" face = "HelveticaBD32" size ="100">你在#v1#日的激流谷战场中使用了战斗挂机，根据战斗结果，共获得了：</font>
+18	<font  color="#ffffff" face = "HelveticaBD32" size ="100">远征物资征集第#v1#阶段已经完成，感谢你的卓越贡献，你获得了以下奖励：</font>
+19	<font  color="#ffffff" face = "HelveticaBD32" size ="100">由于您的卓越贡献，远征物资征集活动已经结束，您的总贡献排名为#v1#，可以获得以下奖励：</font>

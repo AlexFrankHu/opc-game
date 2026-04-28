@@ -1,0 +1,110 @@
+ID	内容
+3	<font  color="#000000" face = "HelveticaBD32" size ="100">【系统】：</font><font color="#f63345" face = "HelveticaBD32" size ="100">#v1#</font>
+4	<font  color="#2951EF" face = "HelveticaBD32" size ="100">#v1#<img src="#v3#"/>#v4#：</font><font color="#000000" face = "HelveticaBD32" size ="100">#v2#</font>
+5	<font  color="#000000" face = "HelveticaBD32" size ="100">正在搜索地图怪，下一场战斗即将开始...(#v1#)</font>
+9	<font  color="#D62CF7" face = "HelveticaBD32" size ="100">#v1#<img src="#v3#"/>#v4#：</font><font color="#000000" face = "HelveticaBD32" size ="100">#v2#</font>
+7	战斗胜利
+10	<font  color="#ff0000" size ="100">#v1#</font>:<font face="font3" color="#00ff00" size ="100">[#v2#]</font>:<font face="font3" color="#00ff00" size ="100">#v3#</font>
+11	战士
+12	猎人
+13	法师
+14	已出战
+15	休息中
+16	<font face = "Helvetica26" color="#ffffff" >#v1#</font><font face = "Helvetica24" color="#02fd20" >[#v2#]</font><font face = "Helvetica24" color="#ffffff">#v3#</font>
+17	力量
+18	敏捷
+19	智力
+20	<font color="#000000" face = "HelveticaBD32" >正在努力为您搜索地图怪...(#v1#)</font>
+6	<font color="#000000" face = "HelveticaBD32" >战斗恢复中，休息一下...(#v1#)</font>
+8	<font color="#000000" face = "HelveticaBD32" >正在努力为您搜索地图怪...(#v1#)</font>
+21	<font  color="#000000" size ="100" face = "HelveticaBD32" >你遇到了</font><font  color="#0085e2" size ="100" face = "HelveticaBD32" > lv.#v1# </font><font  color="#0085e2" size ="100" face = "HelveticaBD32" >#v2#</font><font  color="#0085e2" size ="100" face = "HelveticaBD32" > HP:#v3#</font>
+22	<br/>
+23	<font  color="#f9b522" face = "HelveticaBD32" size ="100">战力: #v1#</font><br/><font  color="#9f67bf" face = "HelveticaBD32" size ="100">属性: 总属性对<font  color="#faf84a" face = "HelveticaBD32" size ="100"> #v2# </font>级敌人的效果</font>
+24	<font  color="#fefefe" face = "HelveticaBD32" size ="100">基础属性:</font>
+25	<font  color="#fefefe" face = "HelveticaBD32" size ="100">战斗属性:</font>
+26	<font  color="#fefefe" face = "HelveticaBD32" size ="100">神器属性:</font>
+27	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">力  量：</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1#  </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">[ 物抗</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> +#v2# </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">命中</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> +#v3# </font>#v4# <font  color="#9f67bf" face = "HelveticaBD32" size ="100">]</font> 
+28	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">敏  捷：</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1#  </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">[ 暴击</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> +#v2# </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">闪避</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> +#v3# </font>#v4# <font  color="#9f67bf" face = "HelveticaBD32" size ="100">]</font>
+29	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">智  力：</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1#  </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">[ 魔抗</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> +#v2# </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">每回合回复</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> +#v3# </font><font  color="#02fd20" face = "HelveticaBD32" size ="100">MP </font>#v4# <font  color="#9f67bf" face = "HelveticaBD32" size ="100">]</font>
+30	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">耐  力：</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1#  </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">[ HP</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> +#v2# </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">韧性</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> +#v3# </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">]</font>
+31	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">生命值: </font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1#</font>
+32	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">魔法值: </font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1#</font>
+33	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">最小伤害: </font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1#</font>
+34	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">最大伤害: </font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1#</font>
+35	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">护甲: </font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1# </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">[ 减少</font><font  color="#02fd20" face = "HelveticaBD32" size ="100">  #v2#%  </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">受到的伤害 ]</font>
+36	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">物抗: </font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1# </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">[ 减少</font><font  color="#02fd20" face = "HelveticaBD32" size ="100">  #v2#%  </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">受到的物理伤害 ]</font>
+37	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">魔抗: </font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1# </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">[ 减少</font><font  color="#02fd20" face = "HelveticaBD32" size ="100">  #v2#%  </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">受到的魔法伤害 ]</font>
+38	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">暴击: </font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1# </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">[ 普通攻击</font><font  color="#02fd20" face = "HelveticaBD32" size ="100">  #v2#%  </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">概率造成</font><font  color="#02fd20" face = "HelveticaBD32" size ="100">  #v3#%  </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">的伤害 ]</font>
+39	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">命中: </font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1# </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">[ 提升攻击命中率 ]</font>
+40	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">闪避: </font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1# </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">[ 提升被普通攻击躲闪率 ]</font>
+41	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">韧性: </font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v1# </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">[ 降低被暴击概率 ]</font>
+42	<font  color="#9f67bf" face = "HelveticaBD32" size ="100">最小伤害</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> +#v1# </font> <font  color="#9f67bf" face = "HelveticaBD32" size ="100">最大伤害</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> +#v2# </font>
+43	<font color="#929392" face = "HelveticaBD30" >#v1#</font>
+44	<font color="#02fd20" face = "HelveticaBD30" >#v1#</font>
+45	<font color="#3a91ea" face = "HelveticaBD30" >#v1#</font>
+46	<font color="#ba1cf5" face = "HelveticaBD30" >#v1#</font>
+47	<font color="#f9b522" face = "HelveticaBD30" >#v1#</font>
+48	<font color="#faf84a" face = "HelveticaBD30" >只有 #v1# 可以装备</font>
+49	<font color="#00c0ff" face = "HelveticaBD30" >装备评分 #v1#</font>
+50	<font face = "HelveticaBD30" size="120">#v1#</font>
+51	<font color="#f63345" face = "HelveticaBD30" >#v1#</font>
+52	<font color="#02fd20" face = "HelveticaBD30" >#v1# +#v3#[全身强化+#v2#激活 已激活]</font>
+53	<font color="#929392" face = "HelveticaBD30" >#v1# +#v3#[全身强化+#v2#激活 未激活]</font>
+54	<font color="#ffff00" face = "HelveticaBD30" >#v1#</font>
+55	<font color="#ffffff" face = "HelveticaBD32" >#v1#</font><br/><font color="#fd4a4a" face = "HelveticaBD32" >#v2#</font>
+56	<font color="#ffffff" face = "HelveticaBD32" >#v1#</font>
+57	<font color="#929392" face = "HelveticaBD30" >#v1#</font>
+58	<font color="#02fd20" face = "HelveticaBD30" >#v1#</font>
+59	<font color="#3a91ea" face = "HelveticaBD30" >#v1#</font>
+60	<font color="#ba1cf5" face = "HelveticaBD30" >#v1#</font>
+61	<font color="#f9b522" face = "HelveticaBD30" >#v1#</font>
+62	<font color="#ba1cf5" face = "HelveticaBD26" >奖励: </font><font color="#62dbf8" face = "HelveticaBD26" >#v1#</font><font color="#f9b522" face = "HelveticaBD26" >*#v2#</font><font color="#62dbf8" face = "HelveticaBD26" >  #v3#</font><font color="#f9b522" face = "HelveticaBD26" >*#v4#</font><font color="#62dbf8" face = "HelveticaBD26" >  #v5#</font><font color="#f9b522" face = "HelveticaBD26" >*#v6#</font>
+63	<font color="#2c84fb" face = "HelveticaBD32" >LV.#v1# #v2#[#v3#]</font>
+64	<p style="margin:#v1#px">#v2#</p>
+65	<font color="#ff0018" face = "HelveticaBD32" >#v1#</font>
+66	<font color="#faf84a" face = "HelveticaBD28" >只有 #v1# 可以装备</font>
+67	<font color="#00c0ff" face = "HelveticaBD28" >装备评分 #v1#</font>
+68	<font face = "HelveticaBD28" size="120">#v1#</font>
+69	<font color="#f63345" face = "HelveticaBD28" >#v1#</font>
+70	<font color="#929392" face = "HelveticaBD20" >#v1#</font>
+71	<font color="#02fd20" face = "HelveticaBD28" >#v1#</font>
+72	<font color="#3a91ea" face = "HelveticaBD28" >#v1#</font>
+73	<font color="#ba1cf5" face = "HelveticaBD28" >#v1#</font>
+74	<font color="#f9b522" face = "HelveticaBD28" >#v1#</font>
+75	<font color="#929392" face = "HelveticaBD30" >#v1# +#v3#[下一星级,全身强化+#v2#激活 未激活]</font>
+76	<font color="#ff0018" face = "HelveticaBD32" >#v1#</font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">(无视</font><font  color="#02fd20" face = "HelveticaBD32" size ="100"> #v2#% </font><font  color="#9f67bf" face = "HelveticaBD32" size ="100">#v3#)</font>
+200	<font color="#ffffff" face = "HelveticaBD30" >累计充值</font><font color="#f9b522" face = "HelveticaBD30" >#v1#钻石</font><font color="#ffffff" face = "HelveticaBD30" >即可成享受该特权</font>
+201	<font color="#ffffff" face = "HelveticaBD30" >每天可以购买快速战斗 </font><font color="#f9b522" face = "HelveticaBD30" >#v1#</font>
+202	<font color="#ffffff" face = "HelveticaBD30" >每天可以购买挑战BOSS次数 </font><font color="#f9b522" face = "HelveticaBD30" >#v1#</font>
+203	<font color="#ffffff" face = "HelveticaBD30" >每天可以购买金币次数 </font><font color="#f9b522" face = "HelveticaBD30" >#v1#</font>
+204	<font color="#ffffff" face = "HelveticaBD30" >商城额外高级物品栏 </font><font color="#f9b522" face = "HelveticaBD30" >#v1#</font>
+205	<font color="#ffffff" face = "HelveticaBD30" >击败BOSS可额外发现 </font><font color="#f9b522" face = "HelveticaBD30" >#v1#</font>
+206	<font color="#ffffff" face = "HelveticaBD30" >最高佣兵培养 </font><font color="#f9b522" face = "HelveticaBD30" >#v1#</font>
+207	<font color="#ffffff" face = "HelveticaBD30" >快速战斗经验及金币收益加成 </font><font color="#f9b522" face = "HelveticaBD30" >#v1#%</font>
+208	<font color="#ffffff" face = "HelveticaBD30" >可使用boss扫荡功能 </font>
+83	<font color="#ffffff" face = "HelveticaBD30" >再充值</font><font color="#f9b522" face = "HelveticaBD30" >#v1#钻石</font><font color="#ffffff" face = "HelveticaBD30" >即可成为</font><font color="#f9b522" face = "HelveticaBD30" >VIP#v2#</font>
+84	<font color="#ffffff" face = "HelveticaBD20" >输入</font><font color="#f63345" face = "HelveticaBD22" >qmgj</font><font color="#ffffff" face = "HelveticaBD22" >可以领取</font><font color="#f63345" face = "HelveticaBD22" >100</font><font color="#ffffff" face = "HelveticaBD22" >钻石，１个</font><font color="#f63345" face = "HelveticaBD22" >挂</font><font color="#ffffff" face = "HelveticaBD22" >字</font><br/><font color="#ffffff" face = "HelveticaBD22" >输入</font><font color="#f63345" face = "HelveticaBD22" >ttagj</font><font color="#ffffff" face = "HelveticaBD22" >可以领取</font><font color="#f63345" face = "HelveticaBD22" >300</font><font color="#ffffff" face = "HelveticaBD22" >钻石</font>
+85	<font color="#ffffff" face = "HelveticaBD" >#v1#</font>
+86	<font color="#f9b522" face = "HelveticaBD" >购买后产生</font><font color="#ff0000" face = "HelveticaBD" > #v1# </font><font color="#f9b522" face = "HelveticaBD" >条随机属性</font>
+87	<font color="#faf84a" face = "HelveticaBD" >只有 #v1# 可以装备</font>
+88	<p style="margin:15px" ><font color="#faf84a" size ="100" face = "HelveticaBD32" >熔炉可以将您</font><font color="#f64d4d" size ="100" face = "HelveticaBD32" > 不要的装备 </font><font color="#faf84a" size ="100" face = "HelveticaBD32" >熔炼成</font><font color="#f64d4d" size ="100" face = "HelveticaBD32" > 更高品质的装备 </font><font color="#faf84a" size ="100" face = "HelveticaBD32" >或</font><font color="#f64d4d" size ="100" face = "HelveticaBD32" > 熔炼值 </font><font color="#faf84a" size ="100" face = "HelveticaBD32" >，熔炼值可以通过</font><font color="#f64d4d" size ="100" face = "HelveticaBD32" > 普通打造 </font><font color="#faf84a" size ="100" face = "HelveticaBD32" >按钮打造更高品质装备甚至神器！</font></p>
+89	<p style="margin:15px" ><font color="#faf84a" face = "HelveticaBD32" >从进入游戏开始您就已经在</font><font color="#f64d4d" face = "HelveticaBD32" >自动战斗</font><font color="#faf84a" face = "HelveticaBD32" >，即使</font><font color="#f64d4d" face = "HelveticaBD32" >退出游戏</font><font color="#faf84a" face = "HelveticaBD32" >甚至</font><font color="#f64d4d" face = "HelveticaBD32" >关闭手机</font><font color="#faf84a" face = "HelveticaBD32" >都</font><font color="#f64d4d" face = "HelveticaBD32" >不会停</font><font color="#faf84a" face = "HelveticaBD32" >（不消耗流量），只要再回到游戏就能收获经验、金币和装备</font></p>
+90	<p style="margin:15px" ><font color="#faf84a" face = "HelveticaBD32" >您可以通过</font><font color="#f64d4d" face = "HelveticaBD32" >打造装备、熔炼装备、商城刷新</font><font color="#faf84a" face = "HelveticaBD32" >来获得更强的装备，也可以使用</font><font color="#f64d4d" face = "HelveticaBD32" >快速战斗</font><font color="#faf84a" face = "HelveticaBD32" >来增强实力。击败  BOSS获得稀有装备、经验跟金钱</font></p>
+91	<p style="margin:15px" ><font color="#faf84a" face = "HelveticaBD32" >点击</font><font color="#f64d4d" face = "HelveticaBD32" > 更换技能 </font><font color="#faf84a" face = "HelveticaBD32" >就能装备已学会的技能，技能按顺序施放，施放完后进行两次普通攻击，之后再次施放技能直到魔法值用完！</font></p>
+92	<p style="margin:15px" ><font color="#faf84a" face = "HelveticaBD32" >战斗过程我们可以帮您</font><font color="#f64d4d" face = "HelveticaBD32" >自动打怪、施放技能、自动获得金钱、经验跟装备 </font><font color="#faf84a" face = "HelveticaBD32" >解放您的双手！</font><font color="#f64d4d" face = "HelveticaBD32" >战胜BOSS</font><font color="#faf84a" face = "HelveticaBD32" >后自动进入</font><font color="#f64d4d" face = "HelveticaBD32" > 新地图 </font><font color="#faf84a" face = "HelveticaBD32" >获得更多经验金币</font></p>
+93	<font color="#FFFFFF" face = "HelveticaBD" >#v1#</font>
+94	<font color="#02fd20" face = "HelveticaBD" >#v1#</font>
+95	<font color="#3a91ea" face = "HelveticaBD" >#v1#</font>
+96	<font color="#f602f6" face = "HelveticaBD" >#v1#</font>
+97	<font color="#f9b522" face = "HelveticaBD" >#v1#</font>
+98	<font color="#ffffff" face = "HelveticaBD" ><br/>也可用于熔炼，紫装可熔出橙装，橙装可熔出神器</font>
+99	<font  color="#ff0000" face = "HelveticaBD32" size ="100">#v1#</font><font  color="#10a408" face = "HelveticaBD32" size ="100">[美女大使]--</font><font color="#cb02fd" face = "HelveticaBD32" size ="100">#v2#</font>
+100	<font color="#ffffff" face = "HelveticaBD30" >剩余</font><font color="#f9b522" face = "HelveticaBD30" >#v1#</font><font color="#ffffff" face = "HelveticaBD30" >天</font>
+101	<font color="#ffffff" face = "HelveticaBD20" >本阶段完成且个人贡献达到</font><font color="#f9b522" face = "HelveticaBD20" >#v1#</font><font color="#ffffff" face = "HelveticaBD20" >可邮件领取</font>
+102	<font color="#f9b522" face = "HelveticaBD" >星标装备生成的属性更好</font>
+103	<font color="#f9b522" face = "HelveticaBD" >+#v1#%(</font><font color="#00ff00" face = "HelveticaBD" >+#v2#%</font><font color="#f9b522" face = "HelveticaBD" >)</font>
+104	<font color="#f9b522" face = "HelveticaBD" >+#v1#%</font>
+501	<font color="#ffffff" face = "HelveticaBD20" >获得</font><font color="#f9b522" face = "HelveticaBD20" >#v1#</font><font color="#ffffff" face = "HelveticaBD20" >点贡献</font><br/><font color="#ffffff" face = "HelveticaBD20" >并获得额外奖励</font>
+301	<font  color="#2951EF" face = "HelveticaBD32" size ="100">#v1##v4#：</font><font color="#000000" face = "HelveticaBD32" size ="100">#v2#</font>
+302	<font  color="#D62CF7" face = "HelveticaBD32" size ="100">#v1##v4#：</font><font color="#000000" face = "HelveticaBD32" size ="100">#v2#</font>
+601	<font color="#2bfde7" face = "HelveticaBD20" >公会成员以下活动可为公会贡献魔兽元气</font><br/><font color="#77f63f" face = "HelveticaBD20" >快速战斗、激流谷之战</font><font color="#f85b5b" face = "HelveticaBD20" >20</font><font color="#77f63f" face = "HelveticaBD20" >点</font><br/><font color="#77f63f" face = "HelveticaBD20" >地图Boss、古宝山争霸</font><font color="#f85b5b" face = "HelveticaBD20" >10</font><font color="#77f63f" face = "HelveticaBD20" >点</font><br/><font color="#77f63f" face = "HelveticaBD20" >竞技场挑战玩家成功</font><font color="#f85b5b" face = "HelveticaBD20" >5</font><font color="#77f63f" face = "HelveticaBD20" >点</font><br/><font color="#77f63f" face = "HelveticaBD20" >开启BOSS消耗公会魔兽元气</font>

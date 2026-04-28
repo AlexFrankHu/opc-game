@@ -1,0 +1,2 @@
+id	content
+1	<font  color="#02fd20" face = "HelveticaBD40" size ="100"><p style="margin:10px" >每日单笔充值说明</p></font><br/><font  color="#f0f0f0 " face = "Helvetica40" size ="100"><p style="margin:10px" >1.活动期间，每日首次充值对应额度，将能够领取与该额度对应的奖励</p></font><br/><font  color="#f0f0f0 " face = "Helvetica40" size ="100"><p style="margin:10px" >2.奖励与充值额度一一对应，例如：充值1000钻只能领取1000钻对应的奖励，而不能领取充值500钻及100钻的奖励。</p></font><br/><font  color="#f0f0f0 " face = "Helvetica40" size ="100"><p style="margin:10px" >3.每档充值奖励每天仅可以领取一次，每日24点刷新，刷新后再次充值对应额度可以领取对应奖励</p></font><br/>

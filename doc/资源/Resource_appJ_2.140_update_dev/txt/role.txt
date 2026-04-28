@@ -1,0 +1,10 @@
+id	职业(profession)	初始等级(level）	初始经验(exp)	名字(name)	技能(skills)	职业角色图(picture)	头像(icon)	下角标(proIcon)
+1	1	1	0	战士	1,2,3,4,5,6,7,8,9,10	UI/Program/HeroWarrior_Man_2.png	UI/Program/HeroWarrior_Man_1.png	UI/Program/u_IcoWarrior.png
+2	2	1	0	猎人	11,12,13,14,15,16,17,18,19,20	UI/Program/HeroHunter_Man_2.png	UI/Program/HeroHunter_Man_1.png	UI/Program/u_IcoHunter.png
+3	3	1	0	法师	21,22,23,24,25,26,27,28,29,30	UI/Program/HeroMaster_Man_2.png	UI/Program/HeroMaster_Man_1.png	UI/Program/u_IcoMaster.png
+4	1	1	0	战士	1,2,3,4,5,6,7,8,9,10	UI/Program/HeroWarrior_Woman_2.png	UI/Program/HeroWarrior_Woman_1.png	UI/Program/u_IcoWarrior.png
+5	2	1	0	猎人	11,12,13,14,15,16,17,18,19,20	UI/Program/HeroHunter_Woman_2.png	UI/Program/HeroHunter_WOman_1.png	UI/Program/u_IcoHunter.png
+6	3	1	0	法师	21,22,23,24,25,26,27,28,29,30	UI/Program/HeroMaster_Woman_2.png	UI/Program/HeroMaster_Woman_1.png	UI/Program/u_IcoMaster.png
+7	1001	1	0	莱恩	1002,1007,1001,1009,1004,1008	UI/Program/MercenaryWarrior_2.png	UI/Program/MercenaryWarrior_1.png	UI/Program/u_IcoWarrior.png
+8	1002	1	0	菲德丝	1012,1013,1011,1015,1014,1018	UI/Program/MercenaryHunter_2.png	UI/Program/MercenaryHunter_1.png	UI/Program/u_IcoHunter.png
+9	1003	1	0	赛琳娜	1024,1022,1026,1028,1029,1023	UI/Program/MercenaryMaster_2.png	UI/Program/MercenaryMaster_1.png	UI/Program/u_IcoMaster.png

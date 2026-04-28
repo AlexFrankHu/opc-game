@@ -1,0 +1,56 @@
+#最大聊天数量限制
+ChatMsgMaxCount = 20
+#公告页面是否打开
+AnnouncementPageOpenStatus = 0
+#获取公告间隔时间(单位: s)
+FetchBulletionOffset = 3000
+#获取公告尝试次数
+MaxFetchBulletinTimes = 1
+#公告页面字数
+AnnouncementPageDescribe = 19
+#小退显示公告
+ShowAnnounceSmallExit = true
+#是否开启协议压缩
+isPacketCompress = false
+#静默重启服务器
+QuietRestartServer = true
+#Music
+#开启音乐开关，1是开启，0是关闭
+musicAndSoundOn = 1
+LoadingMusic = loadingMusic.mp3
+GeneralMusic = general.mp3
+#BattleMusic = lose.mp3
+#公会踢人需要消耗值
+kickNeedCost = 30
+#聊天格式 0 ttf 1 html
+chatWriteType = 1
+#好友页面描述字数长度
+friendDescriptionReturnSize = 15
+#公会自动打boss，消耗钻石数
+autoAllianceFightCost = 20
+#是否审核版0 是 1否
+isAppstore = 1
+#向服务器推送用户信息
+PushSvrID = 1
+#首冲2倍和3倍的图片地址
+threeRatioRecharge=UI/MainScene/UI/u_Label08.png
+twoRatioRecharge=UI/MainScene/UI/u_Label04.png
+#称号字体大小
+arenaItemTittleSize = 20
+arenaRankTittleSize = 20
+arenaMyTittleSize = 25
+friendRecommendTittleSize = 24
+proRankTittleSize = 20
+proRankMyTittleSize = 30
+#充值返利，累计充值小于1000钻石关闭活动
+rebateLimitDiamondNums = 1000
+#装备的星星和装备名字之间的距离
+EquipStarXDistance = 40
+#背包滑动条开关 1为开0为关
+IsUseNewPackagePage = 0
+#技能滑动条开关 1为开0为关
+IsUseNewSkillPage = 0
+#佣兵进入等级限制
+MercenaryEnterLevel = 15
+#精英副本通关模式开关，0用于非app，1用于app
+EliteMapStyle = 1

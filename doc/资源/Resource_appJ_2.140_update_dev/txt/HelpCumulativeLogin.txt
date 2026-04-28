@@ -1,0 +1,2 @@
+id	content
+1	<font  color="#02fd20" face = "HelveticaBD40" size ="100"><p style="margin:10px" >累计登录</p></font><br/><font  color="#f0f0f0 " face = "Helvetica40" size ="100"><p style="margin:10px" >1.活动期间，玩家登录将能够领取与登录天数相应的登录奖励，中断后再次上线登录天数也不会清空</p></font><br/><font  color="#f0f0f0 " face = "Helvetica40" size ="100"><p style="margin:10px" >2.登录天数24点刷新，登录奖励每一档仅可以领取一次</p></font><br/><font  color="#f0f0f0 " face = "Helvetica40" size ="100"><p style="margin:10px" >3.活动期间可以领取所有满足要求但是未领取的奖励，一旦活动结束，未领取的奖励将会作废</p></font><br/>

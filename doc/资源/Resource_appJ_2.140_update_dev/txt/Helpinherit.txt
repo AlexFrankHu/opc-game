@@ -1,0 +1,2 @@
+id	content
+1	<font  color="#02fd20" face = "HelveticaBD40" size ="100"><p style="margin:10px" >传承帮助</p></font><br/><font  color="#f0f0f0" face = "Helvetica40" size ="100"><p style="margin:10px" >●传承可以将神器属性从一件装备转移到另一件装备上。</p></font><br/><font  color="#f0f0f0" face = "Helvetica40" size ="100"><p style="margin:10px" >●传承时只能传承给同一个位置的非神器装备。</p></font><br/><font  color="#f0f0f0" face = "Helvetica40" size ="100"><p style="margin:10px" >●传承需要花费一定量的金币。</p></font><br/>

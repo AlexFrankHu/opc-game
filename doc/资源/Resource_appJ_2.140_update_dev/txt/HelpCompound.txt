@@ -1,0 +1,2 @@
+id	content
+1	<font  color="#02fd20" face = "HelveticaBD40" size ="100"><p style="margin:10px" >融合帮助</p></font><br/><font  color="#f0f0f0" face = "Helvetica40" size ="100"><p style="margin:10px" >●融合将两件同类装备上的不同神器属性融合成双属性神器。</p></font><br/><font  color="#f0f0f0" face = "Helvetica40" size ="100"><p style="margin:10px" >●双属性神器会保留原有神器的经验值，升级双属性神器需要吞噬对应属性的神器。</p></font><br/><font  color="#f0f0f0" face = "Helvetica40" size ="100"><p style="margin:10px" >●神器融合不会消耗掉装备。</p></font><br/>
