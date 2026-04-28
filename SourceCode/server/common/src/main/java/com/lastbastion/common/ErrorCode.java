@@ -24,7 +24,8 @@ public enum ErrorCode {
     INTERNAL(9000, "internal server error"),
     UNKNOWN_ACTION(9001, "unknown action"),
     NOT_LOGGED_IN(9002, "not logged in"),
-    BAD_FRAME(9003, "malformed frame");
+    BAD_FRAME(9003, "malformed frame"),
+    UNAUTHENTICATED(9004, "authentication failed");
 
     private final int code;
     private final String description;

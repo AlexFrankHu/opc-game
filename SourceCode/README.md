@@ -52,7 +52,7 @@ mvn clean install           # 编译 + 单测
 mvn -pl combat-engine test  # 单模块测试
 ```
 
-目前包含 42 个单元/集成测试，覆盖：5v5 战斗主循环、BOSS Rage、CC 免疫、DOT、盾吸收、Gacha 概率/80 抽保底、强化成功率（15 级 60%±3%）、Zone 线性解锁与离线 cap、Arena 换位积分、Battle Pass 升级与付费门槛、引导步骤顺序与条件跳过、货币上限/批量扣款原子性、20 个 Survivor 技能注册完备性，以及启动真实 WebSocket 服务端 → 连接 → 登录 → 推图 → 抽卡 → 未登录拒绝 → 未知 Action 拒绝的端到端 E2E 路径。
+目前包含 64 个单元/集成测试，覆盖：5v5 战斗主循环、BOSS Rage、CC 免疫、DOT、盾吸收、Gacha 概率/80 抽保底、强化成功率（15 级 60%±3%）、Zone 线性解锁与离线 cap、Arena 换位积分、Battle Pass 升级与付费门槛、引导步骤顺序与条件跳过、货币上限/批量扣款原子性、20 个 Survivor 技能注册完备性、JdbcPlayerStore 与 H2 (MySQL 模式) 的 round-trip 与 upsert、HMAC 鉴权服务（开放/启用模式 / 时间戳 skew / 篡改签名拒绝），以及启动真实 WebSocket 服务端 → 连接 → 登录 → 推图 → 抽卡 → 未登录拒绝 → 未知 Action 拒绝 + 启用 HMAC 后未签名/篡改签名拒绝、合法签名通过的端到端 E2E 路径。
 
 ## 服务端启动（本地）
 
@@ -66,18 +66,54 @@ mvn -pl app -am exec:java -Dexec.mainClass=com.lastbastion.app.Main \
 | 网关 | 端口 | 用途 | 对应运行时类 |
 |---|---|---|---|
 | ioGame NettyRunOne（broker） | 10210 | 内部消息路由（bolt） | `IoGameNettyRuntime` |
-| ioGame NettyRunOne（external WS） | 10110 | 生产客户端入口；BarMessage 二进制帧 | `IoGameNettyRuntime` |
-| JSON Dev Gateway (WS) | 10100 | 开发调试；明文 JSON 帧 | `IoGameRuntime` |
+| ioGame NettyRunOne（external WS） | 10110 | 二进制 BarMessage 帧（Cocos 接 ioGame SDK） | `IoGameNettyRuntime` |
+| JSON Gateway (WS) | 10100 | 明文 JSON 帧（web-demo / 简化 Cocos / QA 调试 / 测试服） | `IoGameRuntime` |
 
-自定义端口：
+> 两套网关在测试服都是「正式入口」；选哪一套取决于客户端侧的协议实现。
+> Cocos TS 客户端目前只接 JSON 网关；想跑 ioGame 原生编解码请自行实现 BarMessage codec。
+
+自定义端口与持久化：
 ```bash
 mvn -pl app -am exec:java -Dexec.mainClass=com.lastbastion.app.Main \
-    -DdevPort=10100 -Diogame.externalPort=10110 -Diogame.brokerPort=10210
-# 只启 JSON Dev 网关（禁 ioGame 原生）：
+    -DjsonPort=10100 -Diogame.externalPort=10110 -Diogame.brokerPort=10210
+# 只启 JSON 网关（禁 ioGame 原生）：
 mvn -pl app -am exec:java -Dexec.mainClass=com.lastbastion.app.Main -Diogame.enable=false
+
+# 切到 MySQL 持久化（test/prod）：
+MYSQL_URL='jdbc:mysql://127.0.0.1:3306/lastbastion?useSSL=false&serverTimezone=UTC' \
+MYSQL_USER=root MYSQL_PASSWORD=secret \
+mvn -pl app -am exec:java -Dexec.mainClass=com.lastbastion.app.Main -Dstore.kind=mysql
+
+# 切到 Redis：
+REDIS_URI='redis://127.0.0.1:6379/0' \
+mvn -pl app -am exec:java -Dexec.mainClass=com.lastbastion.app.Main -Dstore.kind=redis
 ```
 
-### JSON Dev Gateway 帧协议（`:10100`）
+### 登录鉴权（HMAC-SHA256）
+启动时若读到 `LOGIN_SHARED_SECRET`（或系统属性 `auth.secret`）就开启签名校验，
+登录请求必须携带 `{deviceId, ts, sig}`，服务端用同一 secret 重算签名校验。
+未配置时退化为「开放模式」，任何 `userId` 都可登录，仅供本地开发 / web-demo 使用。
+
+```bash
+LOGIN_SHARED_SECRET='change-me-in-prod' \
+mvn -pl app -am exec:java -Dexec.mainClass=com.lastbastion.app.Main
+```
+
+请求体（JSON 网关）：
+```json
+{"id":1,"action":"user.login","payload":{
+  "userId":"alice",
+  "deviceId":"web-abc12345",
+  "ts":1735200000123,
+  "sig":"<lower-hex(HMAC-SHA256(secret, userId|deviceId|ts))>"
+}}
+```
+响应中的 `data.authStatus` 为 `OK`（启用签名校验）或 `OPEN_MODE`（未配置 secret）。
+
+> web-demo 登录页有可选的 `鉴权 secret` 输入框，浏览器里用 `crypto.subtle.sign("HMAC", ...)` 计算签名再发出。
+> 真实生产建议通过 OAuth / 第三方账号系统签发后端 token，再转换成短期 session — 不要把 `LOGIN_SHARED_SECRET` 嵌入正式包。
+
+### JSON Gateway 帧协议（`:10100`）
 ```json
 // 请求
 {"id":1,"action":"survivor.pullGacha","payload":{"pool":"FREE","count":1}}

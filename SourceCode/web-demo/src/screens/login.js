@@ -9,6 +9,7 @@ export function renderLogin(host, ctx) {
             <div class="kv" style="margin-bottom:16px;">
                 <div class="k">服务器</div><div><input id="ws" style="width:100%;" /></div>
                 <div class="k">玩家 ID</div><div><input id="uid" style="width:100%;" /></div>
+                <div class="k">鉴权 secret</div><div><input id="secret" type="password" placeholder="（可空，仅在服务端开启 LOGIN_SHARED_SECRET 时填写）" style="width:100%;" /></div>
             </div>
             <div class="row">
                 <button id="btn-login">登录</button>
@@ -29,6 +30,7 @@ export function renderLogin(host, ctx) {
     `;
     const wsInput = host.querySelector("#ws");
     const uidInput = host.querySelector("#uid");
+    const secretInput = host.querySelector("#secret");
     const msg = host.querySelector("#login-msg");
     wsInput.value = ctx.net()?.url || (window._ctx && window._ctx.net()?.url) || "ws://localhost:10100/";
     if (!wsInput.value) {
@@ -45,7 +47,12 @@ export function renderLogin(host, ctx) {
     const doLogin = async () => {
         msg.textContent = "连接中...";
         try {
-            await ctx.connect(wsInput.value.trim(), uidInput.value.trim());
+            const secret = secretInput.value.trim();
+            await ctx.connect(
+                wsInput.value.trim(),
+                uidInput.value.trim(),
+                secret ? { secret } : {},
+            );
             ctx.goto(renderLobby);
         } catch (e) {
             msg.textContent = "失败: " + (e.message || e);

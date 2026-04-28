@@ -9,4 +9,10 @@ import java.io.Serializable;
 public final class LoginMsg implements Serializable {
     public String userId;
     public String clientVer;
+    /** 设备号；启用 HMAC 鉴权时必填。 */
+    public String deviceId;
+    /** 客户端时间戳（毫秒），用于 replay 防护。 */
+    public long ts;
+    /** HMAC-SHA256(secret, userId|deviceId|ts) 的小写 hex。 */
+    public String sig;
 }

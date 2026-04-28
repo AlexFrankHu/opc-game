@@ -1,6 +1,7 @@
 package com.lastbastion.app;
 
 import com.lastbastion.app.actions.ArenaActions;
+import com.lastbastion.app.auth.AuthService;
 import com.lastbastion.app.actions.BattlePassActions;
 import com.lastbastion.app.actions.OnboardingActions;
 import com.lastbastion.app.actions.SurvivorActions;
@@ -22,16 +23,22 @@ public final class IoGameRuntime {
 
     private final GameBootstrap.Services services;
     private final SessionRegistry sessionRegistry;
+    private final AuthService auth;
     private final ActionDispatcher dispatcher = new ActionDispatcher();
     private GameWebSocketServer wsServer;
 
     public IoGameRuntime(GameBootstrap.Services services) {
-        this(services, new SessionRegistry());
+        this(services, new SessionRegistry(), AuthService.fromEnv());
     }
 
     public IoGameRuntime(GameBootstrap.Services services, SessionRegistry sessionRegistry) {
+        this(services, sessionRegistry, AuthService.fromEnv());
+    }
+
+    public IoGameRuntime(GameBootstrap.Services services, SessionRegistry sessionRegistry, AuthService auth) {
         this.services = services;
         this.sessionRegistry = sessionRegistry;
+        this.auth = auth;
         this.dispatcher.setSessionRegistry(sessionRegistry);
         registerActions();
     }
@@ -40,7 +47,7 @@ public final class IoGameRuntime {
     public SessionRegistry sessions() { return sessionRegistry; }
 
     private void registerActions() {
-        dispatcher.register(UserActions.login(sessionRegistry, services));
+        dispatcher.register(UserActions.login(sessionRegistry, services, auth));
         dispatcher.register(UserActions.heartbeat());
         dispatcher.register(SurvivorActions.pullGacha(services));
         dispatcher.register(SurvivorActions.levelUp(services));

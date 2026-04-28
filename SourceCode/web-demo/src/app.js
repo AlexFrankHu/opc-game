@@ -65,7 +65,7 @@ function ctxApi() {
             state.player = p;
             playerTag.textContent = p ? `${p.externalId} · #${p.playerId}` : "";
         },
-        connect: async (url, userId) => {
+        connect: async (url, userId, opts = {}) => {
             if (state.net) state.net.close();
             state.serverUrl = url;
             serverConfig.textContent = `server = ${url}`;
@@ -73,12 +73,36 @@ function ctxApi() {
             net.setStatusCallback(setStatus);
             state.net = net;
             await net.connect();
-            const p = await net.call("user.login", { userId });
+            const payload = { userId };
+            if (opts.secret) {
+                // 启用 HMAC 鉴权时，浏览器侧用 SubtleCrypto 生成签名。
+                const deviceId = opts.deviceId || ("web-" + Math.random().toString(36).slice(2, 10));
+                const ts = Date.now();
+                const sig = await hmacSha256(opts.secret, `${userId}|${deviceId}|${ts}`);
+                payload.deviceId = deviceId;
+                payload.ts = ts;
+                payload.sig = sig;
+            }
+            const p = await net.call("user.login", payload);
             state.player = p;
             playerTag.textContent = `${p.externalId} · #${p.playerId}`;
+            if (p.authStatus) log(`auth: ${p.authStatus}`, p.authStatus === "OK" || p.authStatus === "OPEN_MODE" ? "ok" : "warn");
             return p;
         },
     };
+}
+
+async function hmacSha256(secret, message) {
+    const enc = new TextEncoder();
+    const key = await crypto.subtle.importKey(
+        "raw",
+        enc.encode(secret),
+        { name: "HMAC", hash: "SHA-256" },
+        false,
+        ["sign"],
+    );
+    const sig = await crypto.subtle.sign("HMAC", key, enc.encode(message));
+    return [...new Uint8Array(sig)].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
 setScreen(renderLogin);

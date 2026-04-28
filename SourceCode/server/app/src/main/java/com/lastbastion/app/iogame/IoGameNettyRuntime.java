@@ -47,7 +47,12 @@ public final class IoGameNettyRuntime {
     }
 
     public void start(int externalPort, int brokerPort) {
-        ServiceRegistry.init(services, sessionRegistry);
+        // 如果 Main 已经显式注入了 AuthService，这里不要覆盖；否则按 env 创建。
+        try {
+            ServiceRegistry.auth();
+        } catch (IllegalStateException notInited) {
+            ServiceRegistry.init(services, sessionRegistry);
+        }
 
         externalServer = ExternalServerCreateKit.createExternalServer(
                 externalPort, ExternalJoinEnum.WEBSOCKET);

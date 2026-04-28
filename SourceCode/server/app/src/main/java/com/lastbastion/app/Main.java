@@ -1,6 +1,8 @@
 package com.lastbastion.app;
 
+import com.lastbastion.app.auth.AuthService;
 import com.lastbastion.app.iogame.IoGameNettyRuntime;
+import com.lastbastion.app.iogame.ServiceRegistry;
 import com.lastbastion.app.net.SessionRegistry;
 import com.lastbastion.game.player.FilePlayerStore;
 import com.lastbastion.game.player.InMemoryPlayerStore;
@@ -41,10 +43,16 @@ public final class Main {
         SessionRegistry sessions = new SessionRegistry(store);
         log.info("PlayerStore: {} (size={})", store.getClass().getSimpleName(), store.size());
 
-        int devPort = Integer.parseInt(System.getProperty("devPort", "10100"));
-        IoGameRuntime dev = new IoGameRuntime(svc, sessions);
-        dev.start(devPort);
-        log.info("Dev JSON gateway listening on ws://0.0.0.0:{}/", devPort);
+        AuthService auth = AuthService.fromEnv();
+        // 提前注入静态容器，让两套网关共享同一份 AuthService 实例。
+        ServiceRegistry.init(svc, sessions, auth);
+
+        int jsonPort = Integer.parseInt(System.getProperty("jsonPort",
+                System.getProperty("devPort", "10100")));
+        IoGameRuntime json = new IoGameRuntime(svc, sessions, auth);
+        json.start(jsonPort);
+        log.info("JSON gateway listening on ws://0.0.0.0:{}/ (auth.enforced={})",
+                jsonPort, auth.isEnforced());
 
         if (Boolean.parseBoolean(System.getProperty("iogame.enable", "true"))) {
             int extPort = Integer.parseInt(System.getProperty("iogame.externalPort",

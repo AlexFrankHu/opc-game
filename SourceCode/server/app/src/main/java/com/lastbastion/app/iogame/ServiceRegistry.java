@@ -1,6 +1,7 @@
 package com.lastbastion.app.iogame;
 
 import com.lastbastion.app.GameBootstrap;
+import com.lastbastion.app.auth.AuthService;
 import com.lastbastion.app.net.SessionRegistry;
 
 /**
@@ -14,12 +15,18 @@ public final class ServiceRegistry {
 
     private static volatile GameBootstrap.Services SERVICES;
     private static volatile SessionRegistry SESSIONS;
+    private static volatile AuthService AUTH;
 
     private ServiceRegistry() {}
 
     public static void init(GameBootstrap.Services services, SessionRegistry sessions) {
+        init(services, sessions, AuthService.fromEnv());
+    }
+
+    public static void init(GameBootstrap.Services services, SessionRegistry sessions, AuthService auth) {
         SERVICES = services;
         SESSIONS = sessions;
+        AUTH = auth;
     }
 
     public static GameBootstrap.Services services() {
@@ -30,5 +37,10 @@ public final class ServiceRegistry {
     public static SessionRegistry sessions() {
         if (SESSIONS == null) throw new IllegalStateException("ServiceRegistry not initialised");
         return SESSIONS;
+    }
+
+    public static AuthService auth() {
+        if (AUTH == null) throw new IllegalStateException("ServiceRegistry not initialised");
+        return AUTH;
     }
 }
