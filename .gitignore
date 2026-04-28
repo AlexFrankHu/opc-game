@@ -25,3 +25,7 @@ SourceCode/client/profiles/
 
 # Logs
 *.log
+
+# Local player snapshots (FilePlayerStore)
+SourceCode/server/**/data/players/
+data/players/

@@ -3,10 +3,14 @@ package com.lastbastion.game.augment;
 import com.lastbastion.common.AttributeType;
 import com.lastbastion.common.Stats;
 
+import java.io.Serializable;
+
 /**
  * TASK-005 Augment Chip 实例。
  */
-public final class AugmentInstance {
+public final class AugmentInstance implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private final long instanceId;
     private final AugmentType type;

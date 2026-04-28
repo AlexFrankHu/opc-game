@@ -28,6 +28,9 @@ public final class ActionDispatcher {
     private final ObjectMapper mapper = new ObjectMapper();
     private final Map<String, ActionHandler> byName = new HashMap<>();
     private final Map<Integer, ActionHandler> byCode = new HashMap<>();
+    private SessionRegistry sessions;
+
+    public void setSessionRegistry(SessionRegistry registry) { this.sessions = registry; }
 
     public void register(ActionHandler handler) {
         byName.put(handler.name(), handler);
@@ -56,6 +59,14 @@ public final class ActionDispatcher {
             } catch (Exception e) {
                 log.error("handler {} failed", h.name(), e);
                 return errorResp(id, ErrorCode.INTERNAL.name(), e.getMessage());
+            }
+            // 业务执行成功 → 写回快照（persist-on-each-action）。
+            if (sessions != null && session.isLoggedIn()) {
+                try {
+                    sessions.save(session.player().externalId(), session.player());
+                } catch (Exception ex) {
+                    log.warn("auto-save failed for player {}", session.player().playerId(), ex);
+                }
             }
             ObjectNode resp = mapper.createObjectNode();
             resp.put("id", id);

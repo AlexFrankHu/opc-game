@@ -1,8 +1,15 @@
 package com.lastbastion.app;
 
 import com.lastbastion.app.iogame.IoGameNettyRuntime;
+import com.lastbastion.app.net.SessionRegistry;
+import com.lastbastion.game.player.FilePlayerStore;
+import com.lastbastion.game.player.InMemoryPlayerStore;
+import com.lastbastion.game.player.PlayerStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * Last Bastion 服务端入口。
@@ -28,8 +35,12 @@ public final class Main {
                 svc.survivorRepo.size(),
                 svc.zoneRepo.all().size());
 
+        PlayerStore store = buildPlayerStore();
+        SessionRegistry sessions = new SessionRegistry(store);
+        log.info("PlayerStore: {} (size={})", store.getClass().getSimpleName(), store.size());
+
         int devPort = Integer.parseInt(System.getProperty("devPort", "10100"));
-        IoGameRuntime dev = new IoGameRuntime(svc);
+        IoGameRuntime dev = new IoGameRuntime(svc, sessions);
         dev.start(devPort);
         log.info("Dev JSON gateway listening on ws://0.0.0.0:{}/", devPort);
 
@@ -38,7 +49,7 @@ public final class Main {
                     String.valueOf(IoGameNettyRuntime.DEFAULT_EXTERNAL_PORT)));
             int brokerPort = Integer.parseInt(System.getProperty("iogame.brokerPort",
                     String.valueOf(IoGameNettyRuntime.DEFAULT_BROKER_PORT)));
-            IoGameNettyRuntime netty = new IoGameNettyRuntime(svc, dev.sessions());
+            IoGameNettyRuntime netty = new IoGameNettyRuntime(svc, sessions);
             netty.start(extPort, brokerPort);
         } else {
             log.info("ioGame NettyRunOne disabled via -Diogame.enable=false");
@@ -47,5 +58,18 @@ public final class Main {
         try {
             Thread.currentThread().join();
         } catch (InterruptedException ignore) {}
+    }
+
+    private static PlayerStore buildPlayerStore() {
+        String kind = System.getProperty("store.kind", "file").toLowerCase();
+        return switch (kind) {
+            case "memory", "mem", "in-memory" -> new InMemoryPlayerStore();
+            case "file" -> {
+                Path root = Paths.get(System.getProperty("store.root", "./data/players"));
+                yield new FilePlayerStore(root);
+            }
+            // "redis" / "mysql" 实现预留：只需新增 Jedis / JDBC 客户端即可替换。
+            default -> throw new IllegalArgumentException("Unknown store.kind=" + kind);
+        };
     }
 }

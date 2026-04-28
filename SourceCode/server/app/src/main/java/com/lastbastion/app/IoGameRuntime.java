@@ -21,12 +21,18 @@ public final class IoGameRuntime {
     private static final Logger log = LoggerFactory.getLogger(IoGameRuntime.class);
 
     private final GameBootstrap.Services services;
-    private final SessionRegistry sessionRegistry = new SessionRegistry();
+    private final SessionRegistry sessionRegistry;
     private final ActionDispatcher dispatcher = new ActionDispatcher();
     private GameWebSocketServer wsServer;
 
     public IoGameRuntime(GameBootstrap.Services services) {
+        this(services, new SessionRegistry());
+    }
+
+    public IoGameRuntime(GameBootstrap.Services services, SessionRegistry sessionRegistry) {
         this.services = services;
+        this.sessionRegistry = sessionRegistry;
+        this.dispatcher.setSessionRegistry(sessionRegistry);
         registerActions();
     }
 

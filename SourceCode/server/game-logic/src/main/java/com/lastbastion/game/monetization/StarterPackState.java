@@ -1,6 +1,10 @@
 package com.lastbastion.game.monetization;
 
-public final class StarterPackState {
+import java.io.Serializable;
+
+public final class StarterPackState implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private boolean eligible;
     private boolean purchased;

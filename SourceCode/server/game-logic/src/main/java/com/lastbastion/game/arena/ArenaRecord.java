@@ -1,6 +1,10 @@
 package com.lastbastion.game.arena;
 
-public final class ArenaRecord {
+import java.io.Serializable;
+
+public final class ArenaRecord implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     public final long opponentId;
     public final String opponentName;
     public final boolean won;

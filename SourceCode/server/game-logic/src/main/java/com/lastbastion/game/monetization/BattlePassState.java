@@ -1,11 +1,14 @@
 package com.lastbastion.game.monetization;
 
+import java.io.Serializable;
 import java.util.BitSet;
 
 /**
  * 玩家本赛季 Battle Pass 状态（TASK-009）。
  */
-public final class BattlePassState {
+public final class BattlePassState implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     public static final int MAX_LEVEL = 50;
 

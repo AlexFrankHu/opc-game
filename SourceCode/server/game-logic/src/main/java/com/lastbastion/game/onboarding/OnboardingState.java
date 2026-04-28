@@ -1,11 +1,14 @@
 package com.lastbastion.game.onboarding;
 
+import java.io.Serializable;
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.Map;
 import java.util.Set;
 
-public final class OnboardingState {
+public final class OnboardingState implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private OnboardingStep current = OnboardingStep.INTRO_CINEMATIC;
     private final Set<OnboardingStep> completed = EnumSet.noneOf(OnboardingStep.class);

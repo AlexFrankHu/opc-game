@@ -1,5 +1,6 @@
 package com.lastbastion.game.arena;
 
+import java.io.Serializable;
 import java.util.ArrayDeque;
 import java.util.Collections;
 import java.util.Deque;
@@ -7,7 +8,9 @@ import java.util.Deque;
 /**
  * 玩家的竞技场当日状态。
  */
-public final class ArenaState {
+public final class ArenaState implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private int rank = Integer.MAX_VALUE;
     private int score = 1000;

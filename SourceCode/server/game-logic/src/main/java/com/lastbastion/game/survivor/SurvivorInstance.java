@@ -2,6 +2,7 @@ package com.lastbastion.game.survivor;
 
 import com.lastbastion.common.GearSlot;
 
+import java.io.Serializable;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +10,9 @@ import java.util.Map;
 /**
  * 玩家拥有的 Survivor 实例（等级/星级/技能等级 + 装备槽）。
  */
-public final class SurvivorInstance {
+public final class SurvivorInstance implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private final long instanceId;
     private final String configId;

@@ -2,17 +2,22 @@ package com.lastbastion.game.player;
 
 import com.lastbastion.common.CurrencyType;
 
+import java.io.Serializable;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * 单个玩家的运行时聚合根。生产环境中会由数据库/缓存持久化。
+ * 单个玩家的运行时聚合根。通过 {@link com.lastbastion.game.player.PlayerStore}
+ * 持久化到 Redis / MySQL / 本地磁盘，进程重启后数据可恢复。
  */
-public final class PlayerContext {
+public final class PlayerContext implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private final long playerId;
+    private final String externalId;
     private String nickname;
     private long registerTimestamp;
     private long lastLogoutTimestamp;
@@ -43,14 +48,20 @@ public final class PlayerContext {
     private final long[] activeTeamSurvivors = new long[5];
     private final long[] defenseTeamSurvivors = new long[5];
 
-    public PlayerContext(long playerId, String nickname) {
+    public PlayerContext(long playerId, String externalId) {
+        this(playerId, externalId, externalId);
+    }
+
+    public PlayerContext(long playerId, String externalId, String nickname) {
         this.playerId = playerId;
+        this.externalId = externalId;
         this.nickname = nickname;
         this.registerTimestamp = System.currentTimeMillis();
         for (CurrencyType c : CurrencyType.values()) currencies.put(c, 0L);
     }
 
     public long playerId() { return playerId; }
+    public String externalId() { return externalId; }
     public String nickname() { return nickname; }
     public void setNickname(String n) { this.nickname = n; }
 

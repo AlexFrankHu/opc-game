@@ -5,15 +5,19 @@ import com.lastbastion.common.GearQuality;
 import com.lastbastion.common.GearSlot;
 import com.lastbastion.common.Stats;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * TASK-004 — 装备实例。
  */
-public final class GearInstance {
+public final class GearInstance implements Serializable {
 
-    public static final class SubStat {
+    private static final long serialVersionUID = 1L;
+
+    public static final class SubStat implements Serializable {
+        private static final long serialVersionUID = 1L;
         public AttributeType type;
         public double value;
 
