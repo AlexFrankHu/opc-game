@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Last Bastion · Test Demo</title>
+    <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+    <header>
+        <span class="brand">LAST BASTION</span>
+        <span id="conn-status" class="dot dot-off">DISCONNECTED</span>
+        <span id="player-tag"></span>
+        <span class="spacer"></span>
+        <span id="server-config" class="muted"></span>
+    </header>
+    <main id="app"></main>
+    <footer>
+        <div class="log-toolbar">
+            <span>Event Log</span>
+            <button id="log-clear" type="button">clear</button>
+        </div>
+        <pre id="log"></pre>
+    </footer>
+    <script type="module" src="./src/app.js"></script>
+</body>
+</html>
