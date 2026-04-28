@@ -22,7 +22,7 @@
 | TASK-010 | [TASK-010-onboarding.md](./TASK-010-onboarding.md) | 新手引导 | P0 | MVP 骨架完成 |
 | TASK-011 | [TASK-011-analytics.md](./TASK-011-analytics.md) | 埋点系统 | P0 | MVP 骨架完成 |
 | TASK-012 | [TASK-012-numeric-config-integration.md](./TASK-012-numeric-config-integration.md) | 数值配置接入 | P0 | 已完成 |
-| TASK-013 | [TASK-013-balance-simulation-validation.md](./TASK-013-balance-simulation-validation.md) | 自动化模拟与回归 | P0 | 待开发 |
+| TASK-013 | [TASK-013-balance-simulation-validation.md](./TASK-013-balance-simulation-validation.md) | 自动化模拟与回归 | P0 | 已完成 |
 
 > 状态 "MVP 骨架完成" 对应首轮服务端实现 + 单元测试 + Cocos 客户端骨架，代码位于 [../SourceCode/](../SourceCode/)。技能表、图形资源、运行时 ioGame 网络与支付 SDK 接入属于后续迭代。
 

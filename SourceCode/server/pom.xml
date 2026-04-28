@@ -16,6 +16,7 @@
         <module>combat-engine</module>
         <module>game-logic</module>
         <module>app</module>
+        <module>balance-sim</module>
     </modules>
 
     <properties>
