@@ -1,17 +1,20 @@
 package com.lastbastion.app;
 
+import com.lastbastion.app.iogame.IoGameNettyRuntime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Last Bastion 服务端入口。
  *
- * 真实部署参考 ioGame 官方模板：
- *  1) {@code new NettyRunOne().startup(port, logic)}
- *  2) 将 action classes（继承 com.iohao.game.action.skeleton.core.ActionController）
- *     注册到 BrokerClient。
- *
- * 为方便本仓库单元测试与 CI，这里仅演示 bootstrap 装配并立即退出。
+ * 同时启动两个网关，二者共享同一套业务 Service：
+ * <ul>
+ *   <li>{@link IoGameRuntime} —— JSON-over-WebSocket 开发网关（默认 :10100），
+ *       给 Cocos TS 客户端调试用，明文协议，13 个 ActionHandler。</li>
+ *   <li>{@link IoGameNettyRuntime} —— ioGame 原生 {@code NettyRunOne}
+ *       （broker :10210 + external WS :10110），生产流量走向。</li>
+ * </ul>
+ * 两者可独立关闭，互不影响。
  */
 public final class Main {
 
@@ -24,10 +27,23 @@ public final class Main {
         log.info("Boot complete: survivors={}, zones={}",
                 svc.survivorRepo.size(),
                 svc.zoneRepo.all().size());
-        int port = Integer.parseInt(System.getProperty("port", "10100"));
-        IoGameRuntime rt = new IoGameRuntime(svc);
-        rt.start(port);
-        log.info("Server listening on ws://0.0.0.0:{}/", port);
+
+        int devPort = Integer.parseInt(System.getProperty("devPort", "10100"));
+        IoGameRuntime dev = new IoGameRuntime(svc);
+        dev.start(devPort);
+        log.info("Dev JSON gateway listening on ws://0.0.0.0:{}/", devPort);
+
+        if (Boolean.parseBoolean(System.getProperty("iogame.enable", "true"))) {
+            int extPort = Integer.parseInt(System.getProperty("iogame.externalPort",
+                    String.valueOf(IoGameNettyRuntime.DEFAULT_EXTERNAL_PORT)));
+            int brokerPort = Integer.parseInt(System.getProperty("iogame.brokerPort",
+                    String.valueOf(IoGameNettyRuntime.DEFAULT_BROKER_PORT)));
+            IoGameNettyRuntime netty = new IoGameNettyRuntime(svc, dev.sessions());
+            netty.start(extPort, brokerPort);
+        } else {
+            log.info("ioGame NettyRunOne disabled via -Diogame.enable=false");
+        }
+
         try {
             Thread.currentThread().join();
         } catch (InterruptedException ignore) {}

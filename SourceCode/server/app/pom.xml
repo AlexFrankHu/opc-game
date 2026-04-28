@@ -26,7 +26,6 @@
             <groupId>com.iohao.game</groupId>
             <artifactId>run-one-netty</artifactId>
             <version>${iogame.version}</version>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.java-websocket</groupId>
@@ -52,15 +51,5 @@
 
     <build>
         <finalName>last-bastion-app</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <!-- ioGame 21.26 的注解处理器需要 JDK21；禁用它以兼容 JDK17。 -->
-                    <proc>none</proc>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 </project>
