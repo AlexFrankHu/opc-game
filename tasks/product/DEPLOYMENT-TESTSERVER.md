@@ -3,6 +3,9 @@
 > 目的：给 QA / 运维一份可以直接去「下单云机器」的机器规格与安装步骤清单，
 > 覆盖 **单机 100 并发（alpha）**、**双机 500 并发（closed beta）**、**集群 2000 并发（open beta）** 三档。
 > 代码基线：`SourceCode/server/` 当前 main 分支（ioGame 21.26 + Java 21）。
+>
+> **配套脚本**：[`deploy/`](../../deploy/) 已经提供 `Dockerfile` + `docker-compose.yml` + Nginx + MySQL init + systemd unit；
+> 看完本规格说明后想直接拉起，跳到 [`deploy/README.md`](../../deploy/README.md) 即可一键部署。
 
 ## 0. TL;DR
 

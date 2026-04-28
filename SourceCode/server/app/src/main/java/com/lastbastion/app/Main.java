@@ -1,6 +1,7 @@
 package com.lastbastion.app;
 
 import com.lastbastion.app.auth.AuthService;
+import com.lastbastion.app.health.HealthHttpServer;
 import com.lastbastion.app.iogame.IoGameNettyRuntime;
 import com.lastbastion.app.iogame.ServiceRegistry;
 import com.lastbastion.app.net.SessionRegistry;
@@ -31,7 +32,7 @@ public final class Main {
 
     private static final Logger log = LoggerFactory.getLogger(Main.class);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         log.info("Last Bastion server booting ...");
         GameBootstrap boot = new GameBootstrap();
         GameBootstrap.Services svc = boot.boot();
@@ -63,6 +64,11 @@ public final class Main {
             netty.start(extPort, brokerPort);
         } else {
             log.info("ioGame NettyRunOne disabled via -Diogame.enable=false");
+        }
+
+        if (Boolean.parseBoolean(System.getProperty("health.enable", "true"))) {
+            int healthPort = Integer.parseInt(System.getProperty("health.port", "10199"));
+            new HealthHttpServer(healthPort, () -> true).start();
         }
 
         try {

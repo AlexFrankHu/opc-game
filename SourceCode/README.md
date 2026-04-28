@@ -52,7 +52,9 @@ mvn clean install           # 编译 + 单测
 mvn -pl combat-engine test  # 单模块测试
 ```
 
-目前包含 64 个单元/集成测试，覆盖：5v5 战斗主循环、BOSS Rage、CC 免疫、DOT、盾吸收、Gacha 概率/80 抽保底、强化成功率（15 级 60%±3%）、Zone 线性解锁与离线 cap、Arena 换位积分、Battle Pass 升级与付费门槛、引导步骤顺序与条件跳过、货币上限/批量扣款原子性、20 个 Survivor 技能注册完备性、JdbcPlayerStore 与 H2 (MySQL 模式) 的 round-trip 与 upsert、HMAC 鉴权服务（开放/启用模式 / 时间戳 skew / 篡改签名拒绝），以及启动真实 WebSocket 服务端 → 连接 → 登录 → 推图 → 抽卡 → 未登录拒绝 → 未知 Action 拒绝 + 启用 HMAC 后未签名/篡改签名拒绝、合法签名通过的端到端 E2E 路径。
+目前包含 65 个单元/集成测试，覆盖：5v5 战斗主循环、BOSS Rage、CC 免疫、DOT、盾吸收、Gacha 概率/80 抽保底、强化成功率（15 级 60%±3%）、Zone 线性解锁与离线 cap、Arena 换位积分、Battle Pass 升级与付费门槛、引导步骤顺序与条件跳过、货币上限/批量扣款原子性、20 个 Survivor 技能注册完备性、JdbcPlayerStore 与 H2 (MySQL 模式) 的 round-trip 与 upsert、HMAC 鉴权服务（开放/启用模式 / 时间戳 skew / 篡改签名拒绝）、HealthHttpServer healthz/readyz 行为，以及启动真实 WebSocket 服务端 → 连接 → 登录 → 推图 → 抽卡 → 未登录拒绝 → 未知 Action 拒绝 + 启用 HMAC 后未签名/篡改签名拒绝、合法签名通过的端到端 E2E 路径。
+
+部署相关脚本（Dockerfile / docker-compose / Nginx / MySQL init / systemd）放在仓库根 [`deploy/`](../deploy/)，可一键拉起测试服；规格说明见 [`tasks/product/DEPLOYMENT-TESTSERVER.md`](../tasks/product/DEPLOYMENT-TESTSERVER.md)。
 
 ## 服务端启动（本地）
 
