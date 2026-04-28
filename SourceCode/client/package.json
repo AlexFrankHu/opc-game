@@ -1,0 +1,12 @@
+{
+  "name": "last-bastion-client",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Last Bastion client (Cocos Creator 3.x, TypeScript).",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

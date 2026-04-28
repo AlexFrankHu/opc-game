@@ -1,0 +1,93 @@
+[
+  {
+    "chapterId": 1,
+    "chapterName": "Collapsed City",
+    "recommendedPower": 1500,
+    "stages": [
+      {"stageId": 1, "label": "Rubble Alley", "elite": false, "bossStage": false, "recommendedPower": 1000, "waves": [["mob_raider_lv1","mob_raider_lv1"]]},
+      {"stageId": 2, "label": "Broken Market", "elite": false, "bossStage": false, "recommendedPower": 1200, "waves": [["mob_raider_lv1","mob_raider_lv1","mob_raider_lv2"]]},
+      {"stageId": 3, "label": "Old Subway", "elite": false, "bossStage": false, "recommendedPower": 1400, "waves": [["mob_raider_lv2","mob_raider_lv2"]]},
+      {"stageId": 4, "label": "Radio Tower", "elite": false, "bossStage": false, "recommendedPower": 1600, "waves": [["mob_sniper_lv1","mob_raider_lv2"]]},
+      {"stageId": 5, "label": "Fuel Depot", "elite": false, "bossStage": false, "recommendedPower": 1800, "waves": [["mob_raider_lv3","mob_sniper_lv1","mob_raider_lv2"]]},
+      {"stageId": 6, "label": "Clinic Ruins", "elite": true, "bossStage": false, "recommendedPower": 2100, "waves": [["mob_juggernaut_lv1"]]},
+      {"stageId": 7, "label": "Library Pile", "elite": false, "bossStage": false, "recommendedPower": 2300, "waves": [["mob_raider_lv3","mob_sniper_lv2"]]},
+      {"stageId": 8, "label": "Court House", "elite": false, "bossStage": false, "recommendedPower": 2600, "waves": [["mob_raider_lv3","mob_raider_lv3","mob_sniper_lv2"]]},
+      {"stageId": 9, "label": "Harbor Gate", "elite": true, "bossStage": false, "recommendedPower": 2900, "waves": [["mob_juggernaut_lv1","mob_sniper_lv2"]]},
+      {"stageId": 10, "label": "Warden Outpost", "elite": false, "bossStage": false, "recommendedPower": 3200, "waves": [["mob_raider_lv3","mob_raider_lv3","mob_juggernaut_lv1"]]},
+      {"stageId": 11, "label": "Collapsed City BOSS", "elite": false, "bossStage": true, "recommendedPower": 3600, "waves": [["boss_warden_tyrant"]]}
+    ],
+    "drops": [
+      {"itemType": "CURRENCY_CREDITS", "payload": null, "probability": 1.0, "amount": 500},
+      {"itemType": "CURRENCY_ALLOY", "payload": null, "probability": 0.8, "amount": 40},
+      {"itemType": "GEAR_BOX_GREEN", "payload": null, "probability": 0.25, "amount": 1}
+    ],
+    "firstClearRewards": [
+      {"itemType": "CURRENCY_PREMIUM_CHIPS", "payload": null, "probability": 1.0, "amount": 30},
+      {"itemType": "CURRENCY_RECRUIT_TOKENS", "payload": null, "probability": 1.0, "amount": 1}
+    ]
+  },
+  {
+    "chapterId": 2,
+    "chapterName": "Frozen Outskirts",
+    "recommendedPower": 8000,
+    "stages": [
+      {"stageId": 1, "label": "Frostbite Road", "elite": false, "bossStage": false, "recommendedPower": 4000, "waves": [["mob_wolf_lv1","mob_wolf_lv1"]]},
+      {"stageId": 2, "label": "Ice Cave Mouth", "elite": false, "bossStage": false, "recommendedPower": 4500, "waves": [["mob_wolf_lv1","mob_raider_lv3"]]},
+      {"stageId": 3, "label": "Windy Pass", "elite": false, "bossStage": false, "recommendedPower": 5000, "waves": [["mob_sniper_lv3","mob_wolf_lv1"]]},
+      {"stageId": 4, "label": "Abandoned Lodge", "elite": false, "bossStage": false, "recommendedPower": 5500, "waves": [["mob_wolf_lv2","mob_raider_lv3"]]},
+      {"stageId": 5, "label": "Frozen Lake", "elite": false, "bossStage": false, "recommendedPower": 6000, "waves": [["mob_wolf_lv2","mob_wolf_lv2","mob_sniper_lv3"]]},
+      {"stageId": 6, "label": "Ranger Camp", "elite": true, "bossStage": false, "recommendedPower": 6500, "waves": [["mob_juggernaut_lv2","mob_sniper_lv3"]]},
+      {"stageId": 7, "label": "Lookout Tower", "elite": false, "bossStage": false, "recommendedPower": 7000, "waves": [["mob_wolf_lv2","mob_sniper_lv3","mob_wolf_lv2"]]},
+      {"stageId": 8, "label": "Supply Line", "elite": false, "bossStage": false, "recommendedPower": 7500, "waves": [["mob_raider_lv4","mob_wolf_lv2"]]},
+      {"stageId": 9, "label": "Glacier Crack", "elite": false, "bossStage": false, "recommendedPower": 8000, "waves": [["mob_wolf_lv3","mob_raider_lv4"]]},
+      {"stageId": 10, "label": "Shipwreck", "elite": true, "bossStage": false, "recommendedPower": 8800, "waves": [["mob_juggernaut_lv2","mob_wolf_lv3"]]},
+      {"stageId": 11, "label": "Ice Bunker", "elite": false, "bossStage": false, "recommendedPower": 9500, "waves": [["mob_raider_lv4","mob_raider_lv4","mob_sniper_lv3"]]},
+      {"stageId": 12, "label": "Frozen Throne", "elite": false, "bossStage": false, "recommendedPower": 10500, "waves": [["mob_juggernaut_lv2","mob_wolf_lv3","mob_sniper_lv3"]]},
+      {"stageId": 13, "label": "Frozen Outskirts BOSS", "elite": false, "bossStage": true, "recommendedPower": 12000, "waves": [["boss_frostborn_chimera"]]}
+    ],
+    "drops": [
+      {"itemType": "CURRENCY_CREDITS", "payload": null, "probability": 1.0, "amount": 1000},
+      {"itemType": "CURRENCY_ALLOY", "payload": null, "probability": 0.8, "amount": 80},
+      {"itemType": "CURRENCY_TECH_CORES", "payload": null, "probability": 0.3, "amount": 5},
+      {"itemType": "GEAR_BOX_BLUE", "payload": null, "probability": 0.2, "amount": 1}
+    ],
+    "firstClearRewards": [
+      {"itemType": "CURRENCY_PREMIUM_CHIPS", "payload": null, "probability": 1.0, "amount": 60},
+      {"itemType": "CURRENCY_RECRUIT_TOKENS", "payload": null, "probability": 1.0, "amount": 2}
+    ]
+  },
+  {
+    "chapterId": 3,
+    "chapterName": "Underground Bunker",
+    "recommendedPower": 30000,
+    "stages": [
+      {"stageId": 1, "label": "Blast Door", "elite": false, "bossStage": false, "recommendedPower": 13000, "waves": [["mob_drone_lv1","mob_drone_lv1"]]},
+      {"stageId": 2, "label": "Steam Corridor", "elite": false, "bossStage": false, "recommendedPower": 14500, "waves": [["mob_drone_lv1","mob_sentry_lv1"]]},
+      {"stageId": 3, "label": "Reactor Hall", "elite": false, "bossStage": false, "recommendedPower": 16000, "waves": [["mob_sentry_lv1","mob_drone_lv2"]]},
+      {"stageId": 4, "label": "Elevator Shaft", "elite": false, "bossStage": false, "recommendedPower": 17500, "waves": [["mob_drone_lv2","mob_sentry_lv1"]]},
+      {"stageId": 5, "label": "Secret Lab A", "elite": true, "bossStage": false, "recommendedPower": 19000, "waves": [["mob_mech_lv1","mob_sentry_lv1"]]},
+      {"stageId": 6, "label": "Hydro Vault", "elite": false, "bossStage": false, "recommendedPower": 20500, "waves": [["mob_drone_lv2","mob_sentry_lv2"]]},
+      {"stageId": 7, "label": "Server Farm", "elite": false, "bossStage": false, "recommendedPower": 22000, "waves": [["mob_sentry_lv2","mob_drone_lv2"]]},
+      {"stageId": 8, "label": "Cryo Lab", "elite": false, "bossStage": false, "recommendedPower": 23500, "waves": [["mob_drone_lv3","mob_sentry_lv2"]]},
+      {"stageId": 9, "label": "Cascade Vault", "elite": false, "bossStage": false, "recommendedPower": 25000, "waves": [["mob_sentry_lv2","mob_mech_lv1"]]},
+      {"stageId": 10, "label": "Nerve Center", "elite": true, "bossStage": false, "recommendedPower": 27000, "waves": [["mob_mech_lv2","mob_sentry_lv2"]]},
+      {"stageId": 11, "label": "Core Archive", "elite": false, "bossStage": false, "recommendedPower": 29000, "waves": [["mob_drone_lv3","mob_sentry_lv2","mob_drone_lv3"]]},
+      {"stageId": 12, "label": "Cooling Labyrinth", "elite": false, "bossStage": false, "recommendedPower": 31000, "waves": [["mob_sentry_lv3","mob_drone_lv3"]]},
+      {"stageId": 13, "label": "Mag Rail", "elite": false, "bossStage": false, "recommendedPower": 33000, "waves": [["mob_mech_lv2","mob_drone_lv3"]]},
+      {"stageId": 14, "label": "Inner Sanctum", "elite": true, "bossStage": false, "recommendedPower": 35000, "waves": [["mob_mech_lv2","mob_sentry_lv3"]]},
+      {"stageId": 15, "label": "Black Vault", "elite": false, "bossStage": false, "recommendedPower": 37000, "waves": [["mob_sentry_lv3","mob_mech_lv2","mob_drone_lv3"]]},
+      {"stageId": 16, "label": "Bunker BOSS", "elite": false, "bossStage": true, "recommendedPower": 40000, "waves": [["boss_warden_prime"]]}
+    ],
+    "drops": [
+      {"itemType": "CURRENCY_CREDITS", "payload": null, "probability": 1.0, "amount": 2500},
+      {"itemType": "CURRENCY_ALLOY", "payload": null, "probability": 0.8, "amount": 150},
+      {"itemType": "CURRENCY_TECH_CORES", "payload": null, "probability": 0.4, "amount": 15},
+      {"itemType": "GEAR_BOX_PURPLE", "payload": null, "probability": 0.15, "amount": 1}
+    ],
+    "firstClearRewards": [
+      {"itemType": "CURRENCY_PREMIUM_CHIPS", "payload": null, "probability": 1.0, "amount": 120},
+      {"itemType": "CURRENCY_RECRUIT_TOKENS", "payload": null, "probability": 1.0, "amount": 3},
+      {"itemType": "SURVIVOR_SHARD", "payload": "L_COMMANDER_REX", "probability": 1.0, "amount": 30}
+    ]
+  }
+]

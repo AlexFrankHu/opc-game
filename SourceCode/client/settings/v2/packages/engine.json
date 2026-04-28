@@ -1,0 +1,13 @@
+{
+  "modules": {
+    "includeModules": [
+      "core",
+      "2d",
+      "ui",
+      "tween",
+      "gfx-webgl2",
+      "intersection-2d",
+      "profiler"
+    ]
+  }
+}

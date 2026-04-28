@@ -1,0 +1,27 @@
+# Maven
+**/target/
+*.class
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Cocos Creator local
+SourceCode/client/library/
+SourceCode/client/local/
+SourceCode/client/temp/
+SourceCode/client/build/
+SourceCode/client/profiles/
+
+# Logs
+*.log
