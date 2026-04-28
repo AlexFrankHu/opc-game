@@ -8,6 +8,8 @@ import com.lastbastion.common.GearSlot;
 import com.lastbastion.common.events.SourceTag;
 import com.lastbastion.game.analytics.AnalyticsEvent;
 import com.lastbastion.game.analytics.AnalyticsService;
+import com.lastbastion.game.numeric.GearTuning;
+import com.lastbastion.game.numeric.NumericConfig;
 import com.lastbastion.game.player.PlayerContext;
 import com.lastbastion.game.resource.ResourceService;
 import com.lastbastion.game.survivor.SurvivorInstance;
@@ -22,19 +24,25 @@ import java.util.Random;
  */
 public final class GearService {
 
-    public static final int MAX_LEVEL = 20;
-    public static final int BAG_CAPACITY_DEFAULT = 200;
-
     private final ResourceService resource;
     private final AnalyticsService analytics;
     private final Random rng;
-    private int bagCapacity = BAG_CAPACITY_DEFAULT;
+    private final GearTuning tuning;
+    private int bagCapacity;
 
     public GearService(ResourceService resource, AnalyticsService analytics, Random rng) {
+        this(resource, analytics, rng, NumericConfig.defaults().gear());
+    }
+
+    public GearService(ResourceService resource, AnalyticsService analytics, Random rng, GearTuning tuning) {
         this.resource = resource;
         this.analytics = analytics;
         this.rng = rng;
+        this.tuning = tuning;
+        this.bagCapacity = tuning.bagCapacityDefault;
     }
+
+    public int maxLevel() { return tuning.maxLevel; }
 
     public void setBagCapacity(int cap) {
         this.bagCapacity = cap;
@@ -60,8 +68,8 @@ public final class GearService {
      */
     public synchronized EnhanceResult enhance(PlayerContext ctx, long gearId) {
         GearInstance g = require(ctx, gearId);
-        if (g.level() >= MAX_LEVEL) throw new GameException(ErrorCode.ENHANCE_MAX);
-        long cost = 20L + 10L * g.level();
+        if (g.level() >= tuning.maxLevel) throw new GameException(ErrorCode.ENHANCE_MAX);
+        long cost = tuning.enhanceCost(g.level());
         resource.spend(ctx, CurrencyType.ALLOY, cost, SourceTag.GEAR_ENHANCE);
 
         double p = successRate(g.level() + 1);
@@ -78,17 +86,8 @@ public final class GearService {
         return new EnhanceResult(ok, g.level(), cost);
     }
 
-    public static double successRate(int toLevel) {
-        if (toLevel <= 12) return 1.0;
-        if (toLevel == 13) return 0.80;
-        if (toLevel == 14) return 0.70;
-        if (toLevel == 15) return 0.60;
-        if (toLevel == 16) return 0.50;
-        if (toLevel == 17) return 0.30;
-        if (toLevel == 18) return 0.25;
-        if (toLevel == 19) return 0.20;
-        if (toLevel == 20) return 0.15;
-        return 0.0;
+    public double successRate(int toLevel) {
+        return tuning.successRate(toLevel);
     }
 
     /** 分解，产出 Alloy。锁定装备跳过。批量按品质筛选。 */
@@ -100,23 +99,13 @@ public final class GearService {
             if (g == null) continue;
             if (g.locked()) continue; // §4.4
             if (g.equippedSurvivorId() != 0) continue;
-            long payout = alloyByQuality(g.quality()) + 5L * g.level();
+            long payout = tuning.decomposeAlloy(g.quality(), g.level());
             totalAlloy += payout;
             toRemove.add(id);
         }
         for (Long id : toRemove) ctx.gearBag().remove(id);
         if (totalAlloy > 0) resource.add(ctx, CurrencyType.ALLOY, totalAlloy, SourceTag.DECOMPOSE);
         return totalAlloy;
-    }
-
-    private long alloyByQuality(GearQuality q) {
-        return switch (q) {
-            case WHITE -> 5;
-            case GREEN -> 15;
-            case BLUE -> 40;
-            case PURPLE -> 120;
-            case ORANGE -> 400;
-        };
     }
 
     public synchronized void setLock(PlayerContext ctx, long gearId, boolean lock) {

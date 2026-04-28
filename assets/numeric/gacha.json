@@ -1,0 +1,13 @@
+{
+  "rates": {
+    "RARE": 0.85,
+    "EPIC": 0.13,
+    "LEGENDARY": 0.02
+  },
+  "pityLimit": 80,
+  "singleCostToken": 1,
+  "tenCostToken": 10,
+  "singleCostChip": 30,
+  "tenCostChip": 270,
+  "shardsPerDuplicate": 20
+}

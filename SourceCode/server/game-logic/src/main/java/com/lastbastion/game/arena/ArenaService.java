@@ -6,6 +6,8 @@ import com.lastbastion.common.GameException;
 import com.lastbastion.common.events.SourceTag;
 import com.lastbastion.game.analytics.AnalyticsEvent;
 import com.lastbastion.game.analytics.AnalyticsService;
+import com.lastbastion.game.numeric.ArenaTuning;
+import com.lastbastion.game.numeric.NumericConfig;
 import com.lastbastion.game.player.PlayerContext;
 import com.lastbastion.game.resource.ResourceService;
 
@@ -25,14 +27,10 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public final class ArenaService {
 
-    public static final int DAILY_FREE_CHALLENGES = 5;
-    public static final int DAILY_BUY_LIMIT = 10;
-    public static final long BUY_COST_CHIPS = 30;
-    public static final int MATCH_POOL_SIZE = 3;
-
     private final ResourceService resource;
     private final AnalyticsService analytics;
     private final Random rng;
+    private final ArenaTuning tuning;
 
     /** playerId -> record (rank stays implicit via sorted map) */
     private final Map<Long, ArenaRoster> rosters = new ConcurrentHashMap<>();
@@ -40,10 +38,20 @@ public final class ArenaService {
     private final TreeMap<Integer, Long> leaderboard = new TreeMap<>();
 
     public ArenaService(ResourceService resource, AnalyticsService analytics, Random rng) {
+        this(resource, analytics, rng, NumericConfig.defaults().arena());
+    }
+
+    public ArenaService(ResourceService resource, AnalyticsService analytics, Random rng, ArenaTuning tuning) {
         this.resource = resource;
         this.analytics = analytics;
         this.rng = rng;
+        this.tuning = tuning;
     }
+
+    public ArenaTuning tuning() { return tuning; }
+    public int dailyFreeChallenges() { return tuning.dailyFreeChallenges; }
+    public int dailyBuyLimit() { return tuning.dailyBuyLimit; }
+    public long buyCostChips() { return tuning.buyCostChips; }
 
     public synchronized void registerOrUpdate(PlayerContext ctx, int power, long[] defenseTeam) {
         ArenaRoster existing = rosters.get(ctx.playerId());
@@ -67,8 +75,8 @@ public final class ArenaService {
     public synchronized List<ArenaRoster> match(PlayerContext ctx) {
         ArenaRoster me = rosters.get(ctx.playerId());
         if (me == null) throw new GameException(ErrorCode.NOT_FOUND, "not registered in arena");
-        double low = me.power * 0.85;
-        double high = me.power * 1.15;
+        double low = me.power * tuning.matchPowerWindowLow;
+        double high = me.power * tuning.matchPowerWindowHigh;
         List<ArenaRoster> pool = new ArrayList<>();
         for (Map.Entry<Integer, Long> e : leaderboard.entrySet()) {
             if (e.getValue().equals(me.playerId)) continue;
@@ -83,14 +91,14 @@ public final class ArenaService {
         // sample 3 uniformly
         List<ArenaRoster> shuffle = new ArrayList<>(pool);
         java.util.Collections.shuffle(shuffle, rng);
-        for (int i = 0; i < Math.min(MATCH_POOL_SIZE, shuffle.size()); i++) out.add(shuffle.get(i));
+        for (int i = 0; i < Math.min(tuning.matchPoolSize, shuffle.size()); i++) out.add(shuffle.get(i));
         return out;
     }
 
     public synchronized void rolloverDaily(PlayerContext ctx, long nowMs) {
         long today = nowMs / (24L * 3600 * 1000);
         if (ctx.arenaState().lastResetDay() != today) {
-            ctx.arenaState().setDailyFreeLeft(DAILY_FREE_CHALLENGES);
+            ctx.arenaState().setDailyFreeLeft(tuning.dailyFreeChallenges);
             ctx.arenaState().setDailyBoughtToday(0);
             ctx.arenaState().setLastResetDay(today);
         }
@@ -98,10 +106,10 @@ public final class ArenaService {
 
     /** 购买额外挑战次数。 */
     public synchronized void buyChallenge(PlayerContext ctx) {
-        if (ctx.arenaState().dailyBoughtToday() >= DAILY_BUY_LIMIT) {
+        if (ctx.arenaState().dailyBoughtToday() >= tuning.dailyBuyLimit) {
             throw new GameException(ErrorCode.ARENA_BUY_LIMIT);
         }
-        resource.spend(ctx, CurrencyType.PREMIUM_CHIPS, BUY_COST_CHIPS, SourceTag.ARENA_DAILY);
+        resource.spend(ctx, CurrencyType.PREMIUM_CHIPS, tuning.buyCostChips, SourceTag.ARENA_DAILY);
         ctx.arenaState().setDailyBoughtToday(ctx.arenaState().dailyBoughtToday() + 1);
         ctx.arenaState().setDailyFreeLeft(ctx.arenaState().dailyFreeLeft() + 1);
     }
@@ -126,15 +134,15 @@ public final class ArenaService {
             leaderboard.put(myRank, opp.playerId);
             me.rank = oppRank;
             opp.rank = myRank;
-            scoreDelta = 25;
-            me.score += 25;
-            opp.score = Math.max(0, opp.score - 15);
+            scoreDelta = tuning.scoreWinSwap;
+            me.score += tuning.scoreWinSwap;
+            opp.score = Math.max(0, opp.score + tuning.scoreLossOpponentOnSwap);
         } else if (allyWon) {
-            scoreDelta = 10;
-            me.score += 10;
+            scoreDelta = tuning.scoreWinNoSwap;
+            me.score += tuning.scoreWinNoSwap;
         } else {
-            scoreDelta = -5;
-            me.score = Math.max(0, me.score - 5);
+            scoreDelta = tuning.scoreLossSelf;
+            me.score = Math.max(0, me.score + tuning.scoreLossSelf);
         }
         ctx.arenaState().setRank(me.rank);
         ctx.arenaState().setScore(me.score);

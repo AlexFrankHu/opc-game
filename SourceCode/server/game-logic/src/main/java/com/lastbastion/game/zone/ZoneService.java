@@ -6,6 +6,8 @@ import com.lastbastion.common.GameException;
 import com.lastbastion.common.events.SourceTag;
 import com.lastbastion.game.analytics.AnalyticsEvent;
 import com.lastbastion.game.analytics.AnalyticsService;
+import com.lastbastion.game.numeric.NumericConfig;
+import com.lastbastion.game.numeric.ZoneIdleTuning;
 import com.lastbastion.game.player.PlayerContext;
 import com.lastbastion.game.resource.ResourceService;
 
@@ -20,22 +22,28 @@ import java.util.Random;
  */
 public final class ZoneService {
 
-    /** offline reward cap in ms */
-    public static final long IDLE_CAP_MS = 12L * 3600 * 1000;
-    public static final long IDLE_CAP_PREMIUM_MS = 24L * 3600 * 1000;
-
     private final ZoneConfigRepository repo;
     private final ResourceService resource;
     private final AnalyticsService analytics;
     private final Random rng;
+    private final ZoneIdleTuning idleTuning;
 
     public ZoneService(ZoneConfigRepository repo, ResourceService resource,
                        AnalyticsService analytics, Random rng) {
+        this(repo, resource, analytics, rng, NumericConfig.defaults().zoneIdle());
+    }
+
+    public ZoneService(ZoneConfigRepository repo, ResourceService resource,
+                       AnalyticsService analytics, Random rng, ZoneIdleTuning idleTuning) {
         this.repo = repo;
         this.resource = resource;
         this.analytics = analytics;
         this.rng = rng;
+        this.idleTuning = idleTuning;
     }
+
+    public long idleCapMs() { return idleTuning.idleCapMs(); }
+    public long idleCapPremiumMs() { return idleTuning.idleCapPremiumMs(); }
 
     /** 试图通关指定关卡。需先通过 CombatSimulator 跑出结果。 */
     public AttemptResult clear(PlayerContext ctx, int chapterId, int stageId, boolean allyWon) {
@@ -119,11 +127,11 @@ public final class ZoneService {
         long last = ctx.lastLogoutTimestamp();
         if (last == 0) last = nowMs;
         long elapsed = Math.max(0, nowMs - last);
-        long cap = ctx.battlePassActive() ? IDLE_CAP_PREMIUM_MS : IDLE_CAP_MS;
+        long cap = ctx.battlePassActive() ? idleTuning.idleCapPremiumMs() : idleTuning.idleCapMs();
         long effective = Math.min(cap, elapsed);
 
         // 假定：每 30 秒视为一次推图。
-        long fightsPerHour = 120;
+        long fightsPerHour = idleTuning.fightsPerHour;
         double hours = effective / 3_600_000.0;
         long fights = Math.round(hours * fightsPerHour);
 

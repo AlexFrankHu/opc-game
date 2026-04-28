@@ -1,0 +1,17 @@
+{
+  "critBaseMultiplier": 1.5,
+  "armorK": 100,
+  "minDamage": 1,
+  "damageVarianceMin": 0.9,
+  "damageVarianceMax": 1.1,
+  "bossRageThresholdHpRatio": 0.5,
+  "rageAtkMult": 1.3,
+  "rageSpdMult": 1.2,
+  "dotTickInterval": 1,
+  "shieldDurationDefaultTurns": 3,
+  "statusDamageModifiers": {
+    "BURN_TAKEN_PCT": 0.10,
+    "FREEZE_TAKEN_PCT": 0.15
+  },
+  "maxRoundsHardCap": 30
+}

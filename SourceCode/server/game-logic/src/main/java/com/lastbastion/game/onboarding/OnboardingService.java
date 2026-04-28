@@ -4,6 +4,8 @@ import com.lastbastion.common.ErrorCode;
 import com.lastbastion.common.GameException;
 import com.lastbastion.game.analytics.AnalyticsEvent;
 import com.lastbastion.game.analytics.AnalyticsService;
+import com.lastbastion.game.numeric.NumericConfig;
+import com.lastbastion.game.numeric.OnboardingTuning;
 import com.lastbastion.game.player.PlayerContext;
 
 /**
@@ -12,10 +14,18 @@ import com.lastbastion.game.player.PlayerContext;
 public final class OnboardingService {
 
     private final AnalyticsService analytics;
+    private final OnboardingTuning tuning;
 
     public OnboardingService(AnalyticsService analytics) {
-        this.analytics = analytics;
+        this(analytics, NumericConfig.defaults().onboarding());
     }
+
+    public OnboardingService(AnalyticsService analytics, OnboardingTuning tuning) {
+        this.analytics = analytics;
+        this.tuning = tuning;
+    }
+
+    public OnboardingTuning tuning() { return tuning; }
 
     public void complete(PlayerContext ctx, OnboardingStep step) {
         OnboardingState s = ctx.onboardingState();
@@ -38,9 +48,12 @@ public final class OnboardingService {
 
     public void skip(PlayerContext ctx) {
         OnboardingState s = ctx.onboardingState();
-        if (s.current().order() <= OnboardingStep.SKIP_ALLOWED_AFTER) {
+        int skipMin = tuning.skipAllowedAfterStep != null
+                ? tuning.skipAllowedAfterStep.order()
+                : OnboardingStep.SKIP_ALLOWED_AFTER;
+        if (s.current().order() <= skipMin) {
             throw new GameException(ErrorCode.GUIDE_STEP_ORDER,
-                    "cannot skip before step " + OnboardingStep.SKIP_ALLOWED_AFTER);
+                    "cannot skip before step order " + skipMin);
         }
         for (OnboardingStep step : OnboardingStep.values()) {
             if (step.order() < OnboardingStep.COMPLETE.order()) s.completed().add(step);

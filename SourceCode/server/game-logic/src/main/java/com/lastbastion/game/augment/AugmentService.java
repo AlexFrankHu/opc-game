@@ -8,6 +8,8 @@ import com.lastbastion.common.Stats;
 import com.lastbastion.common.events.SourceTag;
 import com.lastbastion.game.analytics.AnalyticsEvent;
 import com.lastbastion.game.analytics.AnalyticsService;
+import com.lastbastion.game.numeric.AugmentTuning;
+import com.lastbastion.game.numeric.NumericConfig;
 import com.lastbastion.game.player.PlayerContext;
 import com.lastbastion.game.resource.ResourceService;
 import com.lastbastion.game.survivor.SurvivorInstance;
@@ -20,19 +22,26 @@ import java.util.List;
  */
 public final class AugmentService {
 
-    public static final int BAG_CAPACITY = 100;
-    public static final long REMOVE_COST_CREDITS = 500;
-
     private final AnalyticsService analytics;
     private final ResourceService resource;
+    private final AugmentTuning tuning;
 
     public AugmentService(AnalyticsService analytics, ResourceService resource) {
-        this.analytics = analytics;
-        this.resource = resource;
+        this(analytics, resource, NumericConfig.defaults().augment());
     }
 
+    public AugmentService(AnalyticsService analytics, ResourceService resource, AugmentTuning tuning) {
+        this.analytics = analytics;
+        this.resource = resource;
+        this.tuning = tuning;
+    }
+
+    public AugmentTuning tuning() { return tuning; }
+    public int bagCapacity() { return tuning.bagCapacity; }
+    public long removeCostCredits() { return tuning.removeCostCredits; }
+
     public AugmentInstance add(PlayerContext ctx, AugmentType type, int star) {
-        if (ctx.augmentBag().size() >= BAG_CAPACITY) {
+        if (ctx.augmentBag().size() >= tuning.bagCapacity) {
             throw new GameException(ErrorCode.BAG_FULL);
         }
         AugmentInstance inst = new AugmentInstance(IdGenerator.next(), type, star);
@@ -51,7 +60,7 @@ public final class AugmentService {
         if (a.star() != b.star() || b.star() != c.star()) {
             throw new GameException(ErrorCode.FUSION_MISMATCH, "star mismatch");
         }
-        if (a.star() >= 6) throw new GameException(ErrorCode.ILLEGAL_ARG, "already max star");
+        if (a.star() >= tuning.maxStar) throw new GameException(ErrorCode.ILLEGAL_ARG, "already max star");
         if (a.equippedSurvivorId() != 0 || b.equippedSurvivorId() != 0 || c.equippedSurvivorId() != 0) {
             throw new GameException(ErrorCode.ILLEGAL_ARG, "cannot fuse equipped augment");
         }
@@ -120,7 +129,7 @@ public final class AugmentService {
         if (s == null) throw new GameException(ErrorCode.NOT_FOUND);
         long id = s.augmentSlots()[slotIndex];
         if (id == 0) return;
-        resource.spend(ctx, CurrencyType.CREDITS, REMOVE_COST_CREDITS, SourceTag.AUGMENT_REMOVE);
+        resource.spend(ctx, CurrencyType.CREDITS, tuning.removeCostCredits, SourceTag.AUGMENT_REMOVE);
         s.augmentSlots()[slotIndex] = 0;
         AugmentInstance a = ctx.augmentBag().get(id);
         if (a != null) a.clearEquipped();
@@ -134,7 +143,7 @@ public final class AugmentService {
         for (long id : s.augmentSlots()) {
             if (id == 0) continue;
             AugmentInstance a = ctx.augmentBag().get(id);
-            if (a != null) out.addAll(a.toStats());
+            if (a != null) out.addAll(tuning.statsFor(a.type(), a.star()));
         }
         return out;
     }

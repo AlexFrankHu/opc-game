@@ -1,0 +1,15 @@
+{
+  "steps": [
+    "INTRO_CINEMATIC",
+    "FIRST_SURVIVOR",
+    "ZONE_1_1_FIGHT",
+    "EQUIP_GEAR",
+    "LEVELUP_SURVIVOR",
+    "ZONE_1_2_FIGHT",
+    "STARTER_PACK_POPUP",
+    "ARENA_ENTRY",
+    "BATTLE_PASS_HIGHLIGHT",
+    "COMPLETE"
+  ],
+  "skipAllowedAfterStep": "LEVELUP_SURVIVOR"
+}

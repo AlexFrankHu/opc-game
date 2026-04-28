@@ -1,0 +1,21 @@
+{
+  "quests": [
+    { "id": 10101, "day": 1, "description": "Clear Zone 1-3",            "conditionKey": "zone_complete:1:3",  "targetValue": 1,  "rewardCurrency": "CREDITS",         "rewardAmount": 1000 },
+    { "id": 10102, "day": 1, "description": "Enhance any gear to +3",    "conditionKey": "gear_enhance_to:3",  "targetValue": 1,  "rewardCurrency": "ALLOY",           "rewardAmount": 200  },
+    { "id": 10103, "day": 1, "description": "Complete 3 arena battles",  "conditionKey": "arena_challenge",    "targetValue": 3,  "rewardCurrency": "CREDITS",         "rewardAmount": 1500 },
+    { "id": 10104, "day": 1, "description": "Level up a Survivor to 10", "conditionKey": "survivor_level_to:10","targetValue": 1,  "rewardCurrency": "RECRUIT_TOKENS",  "rewardAmount": 1    },
+    { "id": 10105, "day": 1, "description": "Claim a Battle Pass reward","conditionKey": "battlepass_claim",   "targetValue": 1,  "rewardCurrency": "PREMIUM_CHIPS",   "rewardAmount": 30   },
+
+    { "id": 10201, "day": 2, "description": "Clear Zone 2-5",            "conditionKey": "zone_complete:2:5",  "targetValue": 1,  "rewardCurrency": "CREDITS",         "rewardAmount": 3000 },
+    { "id": 10202, "day": 2, "description": "Enhance any gear to +6",    "conditionKey": "gear_enhance_to:6",  "targetValue": 1,  "rewardCurrency": "ALLOY",           "rewardAmount": 400  },
+    { "id": 10203, "day": 2, "description": "Win 5 arena battles",       "conditionKey": "arena_win",          "targetValue": 5,  "rewardCurrency": "TECH_CORES",      "rewardAmount": 30   },
+    { "id": 10204, "day": 2, "description": "Level up 2 Survivors to 20","conditionKey": "survivor_level_to:20","targetValue": 2, "rewardCurrency": "RECRUIT_TOKENS",  "rewardAmount": 2    },
+    { "id": 10205, "day": 2, "description": "Fuse 3 augments to 2-star", "conditionKey": "augment_fuse_to:2",  "targetValue": 1,  "rewardCurrency": "CREDITS",         "rewardAmount": 2500 },
+
+    { "id": 10301, "day": 3, "description": "Clear Zone 3 BOSS",         "conditionKey": "zone_complete:3:15", "targetValue": 1,  "rewardCurrency": "CREDITS",         "rewardAmount": 5000 },
+    { "id": 10302, "day": 3, "description": "Enhance any gear to +9",    "conditionKey": "gear_enhance_to:9",  "targetValue": 1,  "rewardCurrency": "ALLOY",           "rewardAmount": 800  },
+    { "id": 10303, "day": 3, "description": "Reach arena rank top 1000", "conditionKey": "arena_rank_top:1000","targetValue": 1,  "rewardCurrency": "TECH_CORES",      "rewardAmount": 60   },
+    { "id": 10304, "day": 3, "description": "Recruit 10 times",          "conditionKey": "gacha_pull",         "targetValue": 10, "rewardCurrency": "RECRUIT_TOKENS",  "rewardAmount": 5    },
+    { "id": 10305, "day": 3, "description": "Star-up a Survivor to 2-star","conditionKey": "survivor_star_to:2","targetValue": 1, "rewardCurrency": "PREMIUM_CHIPS",   "rewardAmount": 50   }
+  ]
+}

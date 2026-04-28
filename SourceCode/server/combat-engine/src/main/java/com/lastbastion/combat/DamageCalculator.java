@@ -5,14 +5,20 @@ import com.lastbastion.common.AttributeType;
 import java.util.Random;
 
 /**
- * TASK-002 §2.2 伤害计算。
+ * TASK-002 §2.2 伤害计算。常量来自 {@link CombatParams}（assets/numeric/combat.json）。
  */
 public final class DamageCalculator {
 
     private final Random rng;
+    private final CombatParams params;
 
     public DamageCalculator(Random rng) {
+        this(rng, CombatParams.defaults());
+    }
+
+    public DamageCalculator(Random rng, CombatParams params) {
         this.rng = rng;
+        this.params = params;
     }
 
     /**
@@ -27,27 +33,25 @@ public final class DamageCalculator {
         }
         double atk = attacker.stats().get(AttributeType.ATK);
         double def = target.stats().get(AttributeType.DEF);
-        double base = Math.max(1.0, atk * atkRatio - def);
-        // ±10% random variance
-        double variance = 0.9 + rng.nextDouble() * 0.2;
+        double base = Math.max(params.minDamage, atk * atkRatio - def);
+        double varianceWidth = params.damageVarianceMax - params.damageVarianceMin;
+        double variance = params.damageVarianceMin + rng.nextDouble() * varianceWidth;
         base *= variance;
-        // crit
         boolean crit = rng.nextDouble() < attacker.stats().get(AttributeType.CRIT_RATE);
         if (crit) {
-            double mult = 1.5 + attacker.stats().get(AttributeType.CRIT_DMG);
+            double mult = params.critBaseMultiplier + attacker.stats().get(AttributeType.CRIT_DMG);
             base *= mult;
         }
-        // Burn increases damage taken by 10%
         for (StatusEffect s : target.statuses()) {
-            if (s.type() == StatusType.BURN) base *= 1.10;
-            if (s.type() == StatusType.FREEZE) base *= 1.15;
+            if (s.type() == StatusType.BURN) base *= (1.0 + params.burnTakenPct);
+            if (s.type() == StatusType.FREEZE) base *= (1.0 + params.freezeTakenPct);
             if (s.type() == StatusType.DEF_DOWN) base *= 1 + s.magnitude();
         }
         for (StatusEffect s : attacker.statuses()) {
             if (s.type() == StatusType.ATK_UP) base *= 1 + s.magnitude();
             if (s.type() == StatusType.ATK_DOWN) base *= Math.max(0.1, 1 - s.magnitude());
         }
-        return new DamageResult(Math.max(1.0, base), crit, false);
+        return new DamageResult(Math.max(params.minDamage, base), crit, false);
     }
 
     public static final class DamageResult {

@@ -6,6 +6,8 @@ import com.lastbastion.common.GameException;
 import com.lastbastion.common.events.SourceTag;
 import com.lastbastion.game.analytics.AnalyticsEvent;
 import com.lastbastion.game.analytics.AnalyticsService;
+import com.lastbastion.game.numeric.NumericConfig;
+import com.lastbastion.game.numeric.ResourceTuning;
 import com.lastbastion.game.player.PlayerContext;
 
 import java.util.EnumMap;
@@ -16,28 +18,34 @@ import java.util.Map;
  */
 public final class ResourceService {
 
-    /** 货币上限（防溢出）。 */
-    public static final EnumMap<CurrencyType, Long> CAPS = new EnumMap<>(CurrencyType.class);
-
-    static {
-        CAPS.put(CurrencyType.CREDITS, 9_999_999_999L);
-        CAPS.put(CurrencyType.ALLOY, 9_999_999L);
-        CAPS.put(CurrencyType.TECH_CORES, 9_999_999L);
-        CAPS.put(CurrencyType.RECRUIT_TOKENS, 9_999_999L);
-        CAPS.put(CurrencyType.PREMIUM_CHIPS, 9_999_999L);
-    }
+    /**
+     * 货币上限（防溢出）。来源 {@link ResourceTuning} / assets/numeric/resources.json。
+     * 公开 static 引用为旧测试保留兼容；新代码请走构造器注入的 {@link #cap(CurrencyType)}。
+     */
+    public static final EnumMap<CurrencyType, Long> CAPS =
+            NumericConfig.defaults().resources().capsAsEnumMap();
 
     private final AnalyticsService analytics;
+    private final ResourceTuning tuning;
 
     public ResourceService(AnalyticsService analytics) {
+        this(analytics, NumericConfig.defaults().resources());
+    }
+
+    public ResourceService(AnalyticsService analytics, ResourceTuning tuning) {
         this.analytics = analytics;
+        this.tuning = tuning;
+    }
+
+    public long cap(CurrencyType type) {
+        return tuning.cap(type);
     }
 
     /** 增加货币，返回实际添加数量（受上限约束）。 */
     public synchronized long add(PlayerContext ctx, CurrencyType type, long amount, SourceTag source) {
         if (amount <= 0) throw new GameException(ErrorCode.ILLEGAL_ARG, "amount must be > 0");
         long current = ctx.currencies().getOrDefault(type, 0L);
-        long cap = CAPS.getOrDefault(type, Long.MAX_VALUE);
+        long cap = tuning.cap(type);
         long newVal = Math.min(cap, current + amount);
         long actual = newVal - current;
         ctx.currencies().put(type, newVal);

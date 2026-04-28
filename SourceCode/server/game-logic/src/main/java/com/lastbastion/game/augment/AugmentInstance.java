@@ -1,6 +1,5 @@
 package com.lastbastion.game.augment;
 
-import com.lastbastion.common.AttributeType;
 import com.lastbastion.common.Stats;
 
 import java.io.Serializable;
@@ -39,31 +38,15 @@ public final class AugmentInstance implements Serializable {
         this.equippedSlotIndex = -1;
     }
 
+    /** @deprecated 数值已迁至 assets/numeric/augment.json。请走 AugmentService.collectStats(...)。 */
+    @Deprecated
     public Stats toStats() {
-        Stats s = new Stats();
-        double mul = starMultiplier(star);
-        switch (type) {
-            case ATK -> s.add(AttributeType.ATK_PCT, 0.08 * mul);
-            case DEF -> s.add(AttributeType.DEF_PCT, 0.10 * mul);
-            case HP -> s.add(AttributeType.HP_PCT, 0.12 * mul);
-            case SPD -> s.add(AttributeType.SPD, 5 * mul);
-            case CRIT -> {
-                s.add(AttributeType.CRIT_RATE, 0.04 * mul);
-                s.add(AttributeType.CRIT_DMG, 0.08 * mul);
-            }
-        }
-        return s;
+        return com.lastbastion.game.numeric.NumericConfig.defaults().augment().statsFor(type, star);
     }
 
+    /** @deprecated 数值已迁至 assets/numeric/augment.json。 */
+    @Deprecated
     public static double starMultiplier(int star) {
-        return switch (star) {
-            case 1 -> 1.0;
-            case 2 -> 1.4;
-            case 3 -> 2.0;
-            case 4 -> 3.0;
-            case 5 -> 4.5;
-            case 6 -> 7.0;
-            default -> 1.0;
-        };
+        return com.lastbastion.game.numeric.NumericConfig.defaults().augment().starMultiplier(star);
     }
 }

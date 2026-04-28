@@ -1,0 +1,23 @@
+{
+  "bagCapacity": 100,
+  "removeCostCredits": 500,
+  "starMultipliers": {
+    "1": 1.0,
+    "2": 1.4,
+    "3": 2.0,
+    "4": 3.0,
+    "5": 4.5,
+    "6": 7.0
+  },
+  "maxStar": 6,
+  "baseStats": {
+    "ATK": [{ "attribute": "ATK_PCT", "value": 0.08 }],
+    "DEF": [{ "attribute": "DEF_PCT", "value": 0.10 }],
+    "HP": [{ "attribute": "HP_PCT", "value": 0.12 }],
+    "SPD": [{ "attribute": "SPD", "value": 5 }],
+    "CRIT": [
+      { "attribute": "CRIT_RATE", "value": 0.04 },
+      { "attribute": "CRIT_DMG", "value": 0.08 }
+    ]
+  }
+}

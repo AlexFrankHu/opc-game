@@ -1,0 +1,21 @@
+{
+  "dailyFreeChallenges": 5,
+  "dailyBuyLimit": 10,
+  "buyCostChips": 30,
+  "matchPoolSize": 3,
+  "matchPowerWindowLow": 0.85,
+  "matchPowerWindowHigh": 1.15,
+  "scoreWinSwap": 25,
+  "scoreWinNoSwap": 10,
+  "scoreLossSelf": -5,
+  "scoreLossOpponentOnSwap": -15,
+  "ranks": [
+    { "id": "BRONZE",   "minScore": 0,    "seasonRewardChips": 50,   "seasonRewardHonor": 50 },
+    { "id": "SILVER",   "minScore": 1000, "seasonRewardChips": 80,   "seasonRewardHonor": 80 },
+    { "id": "GOLD",     "minScore": 1500, "seasonRewardChips": 120,  "seasonRewardHonor": 120 },
+    { "id": "PLATINUM", "minScore": 2000, "seasonRewardChips": 200,  "seasonRewardHonor": 200 },
+    { "id": "DIAMOND",  "minScore": 2500, "seasonRewardChips": 300,  "seasonRewardHonor": 300 },
+    { "id": "MASTER",   "minScore": 3000, "seasonRewardChips": 500,  "seasonRewardHonor": 500 },
+    { "id": "KING",     "minScore": 3500, "seasonRewardChips": 1000, "seasonRewardHonor": 1000 }
+  ]
+}

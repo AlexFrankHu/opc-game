@@ -46,4 +46,20 @@
             <artifactId>junit-jupiter</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/../../../assets/numeric</directory>
+                <targetPath>numeric</targetPath>
+                <filtering>false</filtering>
+                <includes>
+                    <include>*.json</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
 </project>

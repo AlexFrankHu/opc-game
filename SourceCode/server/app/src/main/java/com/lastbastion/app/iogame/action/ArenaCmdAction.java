@@ -61,7 +61,7 @@ public final class ArenaCmdAction {
         ServiceRegistry.services().arena.buyChallenge(ctx);
         ServiceRegistry.sessions().save(ctx.externalId(), ctx);
         ArenaBuyChallengeResp resp = new ArenaBuyChallengeResp();
-        resp.remainingBuys = ArenaService.DAILY_BUY_LIMIT - ctx.arenaState().dailyBoughtToday();
+        resp.remainingBuys = ServiceRegistry.services().arena.dailyBuyLimit() - ctx.arenaState().dailyBoughtToday();
         return resp;
     }
 
